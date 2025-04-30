@@ -566,7 +566,7 @@
                         let currentIndex = 0; // Index to keep track of loaded articles
                         let articles = []; // Array to store all fetched articles                  
 
-                        fetch('https://rss.app/feeds/v1.1/sBW5zsnmNaVrK5bo.json')
+                        fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F%40sa_hilll94')
                             .then(response => response.json())
                             .then(data => {
                                 articles = data.items;
