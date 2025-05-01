@@ -3,7 +3,18 @@
 
 /*===== VARIABLES CSS =====*/
 :root {
-  background-color: rgb(24, 26, 27);
+  /* Theme variables - default to dark mode */
+  --body-bg-color: rgb(24, 26, 27);
+  --header-bg-color: rgba(24, 26, 27, 0.8);
+  --card-bg-color: #242526;
+  --card-bg-color-alt: #2c2d2e;
+  --text-color: #ffffff;
+  --text-color-alt: #d1d1d1;
+  --text-color-light: #b0b0b0;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  
+  /* Original Variables */
   --header-height: 3rem;
   --font-semi: 600;
   /*===== Colors =====*/
@@ -11,9 +22,7 @@
   /* HSL color mode */
   --hue-color: 224;
   --first-color: hsl(var(--hue-color), 89%, 60%);
-  /* --second-color: hsl(var(--hue-color), 56%, 12%); */
-  --second-color: hsl(0, 0%, 100%);
-
+  --second-color: var(--text-color);
 
   /*===== Font and Typegraphy =====*/
   --body-font: 'poppins', sans-serif;
@@ -29,6 +38,22 @@
   /*===== z index =====*/
   --z-back: -10;
   --z-fixed: 100;
+}
+
+/* Light theme variables */
+[data-theme="light"] {
+  --body-bg-color: #f5f5f5;
+  --header-bg-color: rgba(245, 245, 245, 0.8);
+  --card-bg-color: #ffffff;
+  --card-bg-color-alt: #f0f0f0;
+  --text-color: #333333;
+  --text-color-alt: #555555;
+  --text-color-light: #777777;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  
+  /* Second color changes when in light mode */
+  --second-color: var(--text-color);
 }
 
 @media screen and (min-width: 968px) {
@@ -72,17 +97,12 @@ html {
 }
 
 body {
-  -ms-overflow-style: none;
-  /* Hide scrollbar for Internet Explorer */
-}
-
-
-
-body {
   margin: var(--header-height) 0 0 0;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   color: var(--second-color);
+  background-color: var(--body-bg-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1,
@@ -148,8 +168,10 @@ img {
   top: 0;
   left: 0;
   z-index: var(--z-fixed);
-  background-color: #181A1B;
-  box-shadow: 0 1px 4px rgb(24, 26, 27);
+  background-color: var(--header-bg-color);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
 }
 
 /*===== NAV =====*/
@@ -392,6 +414,61 @@ img {
 .mobile-footer-links a:active {
   background-color: var(--first-color);
   transform: translateY(-3px);
+}
+
+/* Theme Toggle Styles */
+.theme-toggle-wrapper {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.theme-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s ease;
+  color: var(--text-color);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.theme-toggle:hover {
+  background-color: rgba(28, 131, 225, 0.2);
+  transform: scale(1.1);
+}
+
+.theme-toggle i {
+  font-size: 1.4rem;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle .dark-icon {
+  opacity: 0;
+  position: absolute;
+  transform: scale(0.5);
+}
+
+.theme-toggle .light-icon {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* When light theme is active */
+[data-theme="light"] .theme-toggle .dark-icon {
+  opacity: 1;
+  transform: scale(1);
+}
+
+[data-theme="light"] .theme-toggle .light-icon {
+  opacity: 0;
+  transform: scale(0.5);
 }
 
 /*===== HOME =====*/
@@ -795,6 +872,64 @@ img {
 
 .project__link i {
   font-size: 30px;
+}
+
+/* Project card styles for light theme */
+[data-theme="light"] .project__card {
+  background-color: var(--card-bg-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .project__title {
+  color: var(--text-color);
+}
+
+[data-theme="light"] .project__description {
+  color: var(--text-color-alt);
+}
+
+[data-theme="light"] .project__link {
+  color: var(--text-color);
+}
+
+/* Skill and work item styles for light theme */
+[data-theme="light"] .skills__data {
+  box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .work__img {
+  box-shadow: 0px 4px 25px rgba(36, 80, 255, 0.7);
+}
+
+/* Timeline item styles for light theme */
+[data-theme="light"] .timeline-content {
+  background: var(--card-bg-color);
+}
+
+[data-theme="light"] .timeline-content::before {
+  background: var(--card-bg-color);
+}
+
+[data-theme="light"] .timeline-title {
+  color: var(--text-color);
+}
+
+[data-theme="light"] .timeline-body p {
+  color: var(--text-color-alt);
+}
+
+/* Contact form styles for light theme */
+[data-theme="light"] .contact-form {
+  background: linear-gradient(145deg, #f0f0f0, #ffffff);
+}
+
+[data-theme="light"] .contact-card {
+  background: linear-gradient(145deg, #f0f0f0, #ffffff);
+}
+
+/* Hamburger menu styles for light theme */
+[data-theme="light"] .hamburger-line {
+  background-color: #333333;
 }
 
 /* Media Queries for Responsiveness */
