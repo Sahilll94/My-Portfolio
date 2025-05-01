@@ -4,124 +4,1082 @@
 <head>
     <meta charset="UTF-8">
     <meta name="robots" content="noindex, nofollow">
-    <link rel="icon" href="assets/img/check.png" type="image/x-icon">
+    <link rel="icon" href="assets/img/Portfolio Favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You</title>
+    <title>Thank You | Sahil's Portfolio</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Roboto', Tahoma, Geneva, Verdana, sans-serif;
-            background: url('assets/img/ThankyouBG.png') no-repeat center center fixed;
-            background-size: cover;
-            color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        :root {
+            --primary-color: #1C83E5;
+            --secondary-color: #56CCF2;
+            --dark-bg: #181A1B;
+            --card-bg: #242526;
+            --text-color: #ffffff;
+            --text-secondary: #b0b0b0;
+            --success-color: #4BB543;
+            --warning-color: #FF9800;
+            --error-color: #F44336;
+            --header-height: 3rem;
+        }
+
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .thank-you-container {
-            text-align: justify;
-            background-color: rgba(0, 0, 0, 0.8); /* Adds transparency to the container */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Particle background */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        /* Main container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            place-items: center;
+            min-height: 100vh;
+        }
+
+        /* Card styles */
+        .thank-you-card {
+            background: rgba(36, 37, 38, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            overflow: hidden;
+            width: 100%;
+            max-width: 700px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            position: relative;
+            margin: 3rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: cardFadeIn 1s forwards 0.5s;
+        }
+
+        .card-header {
+            position: relative;
             padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0px 5px 15px rgb(4, 100, 224);
-            max-width: 600px;
-            width: 90%;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(28, 131, 229, 0.2), rgba(86, 204, 242, 0.1));
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--success-color);
+            border-radius: 50%;
             display: flex;
-            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .success-icon::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(45deg) translateX(-80px);
+            animation: shine 2s infinite 1s;
+        }
+
+        .success-icon i {
+            font-size: 3rem;
+            color: white;
+        }
+
+        .card-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .card-header h1::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            transform: scaleX(0);
+            transform-origin: left;
+            animation: widthIn 1.5s forwards 1s;
+            border-radius: 3px;
+        }
+
+        .card-body {
+            padding: 2rem;
+        }
+
+        .message {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .message span {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        /* Progress tracker */
+        .progress-tracker {
+            margin: 2rem 0;
+        }
+
+        .progress-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-bottom: 1.5rem;
+            z-index: 1;
+        }
+
+        .progress-steps::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-50%);
+            z-index: -1;
+        }
+
+        .progress-steps::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            transform: translateY(-50%);
+            z-index: -1;
+            transition: width 1.5s ease-in-out;
+        }
+
+        .progress-step {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            position: relative;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .step-label {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .progress-step:hover .step-label {
+            opacity: 1;
+        }
+
+        .progress-step.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .progress-step.complete {
+            background-color: var(--success-color);
+            color: white;
+        }
+
+        /* Emoji feedback section */
+        .feedback-section {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .feedback-title {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .emoji-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 1rem 0;
+        }
+
+        .emoji-btn {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: transform 0.3s ease, filter 0.3s ease;
+            position: relative;
+            filter: grayscale(100%);
+        }
+
+        .emoji-btn:hover {
+            transform: scale(1.2);
+            filter: grayscale(0%);
+        }
+
+        .emoji-btn.selected {
+            transform: scale(1.2);
+            animation: pulse 2s infinite;
+            filter: grayscale(0%);
+        }
+
+        .emoji-label {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .emoji-btn:hover .emoji-label {
+            opacity: 1;
+        }
+
+        .feedback-response {
+            height: 20px;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        /* Action buttons */
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn i {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            box-shadow: 0 5px 15px rgba(28, 131, 229, 0.3);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 8px 25px rgba(28, 131, 229, 0.5);
+            transform: translateY(-3px);
+        }
+
+        .btn-primary:hover i {
+            animation: bounceLeft 0.8s infinite;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-color);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary:hover i {
+            transform: translateX(5px);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.7s ease;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        /* Social links */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 2rem 0 1rem;
+        }
+
+        .social-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--text-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-btn i {
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+
+        .social-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-btn:hover::before {
+            opacity: 1;
+        }
+
+        .social-btn:hover i {
+            transform: scale(1.2);
+            color: white;
+        }
+
+        /* Footer */
+        .card-footer {
+            text-align: center;
+            padding: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .card-footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .card-footer a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+
+        /* Loading overlay */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--dark-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .loader {
+            width: 80px;
+            height: 80px;
+            position: relative;
+        }
+
+        .loader::before {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 4px solid transparent;
+            border-top-color: var(--primary-color);
+            border-bottom-color: var(--secondary-color);
+            animation: spin 1s linear infinite;
+        }
+
+        .loader::after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border-radius: 50%;
+            border: 4px solid transparent;
+            border-left-color: var(--primary-color);
+            border-right-color: var(--secondary-color);
+            animation: spin 0.5s linear infinite reverse;
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 99;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+
+        /* Message input */
+        .message-input {
+            display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
+            position: relative;
+            width: 100%;
+            margin-top: 2rem;
         }
 
-        h1 {
-            font-size: 2.5rem;
+        .message-bubble {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             margin-bottom: 1rem;
+            max-width: 100%;
+            position: relative;
+            overflow: hidden;
+            transform-origin: left;
+            transform: scale(0);
+            animation: bubbleIn 0.5s forwards 2s;
         }
 
-        p {
-            font-size: 1.2rem;
-            line-height: 1.5;
-            margin-bottom: 1rem;
+        .message-text {
+            color: var(--text-color);
+            position: relative;
+            opacity: 0;
+            animation: textFadeIn 0.5s forwards 2.5s;
         }
 
-        .back-link {
-            margin-top: 1.5rem;
-            display: inline-block;
-            text-decoration: none;
-            background-color: #4b4b4b;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: bold;
-            transition: 0.3s;
+        .typing-dots {
+            display: flex;
+            gap: 5px;
+            margin: 5px 0;
         }
 
-        .back-link:hover {
-            background-color: #232823;
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--text-secondary);
+            opacity: 0.7;
         }
 
-        @media (max-width: 768px) {
-            body {
-                padding: 10px;
-                height: auto;
+        .typing-dot:nth-child(1) {
+            animation: dotPulse 1.5s infinite 0.2s;
+        }
+
+        .typing-dot:nth-child(2) {
+            animation: dotPulse 1.5s infinite 0.4s;
+        }
+
+        .typing-dot:nth-child(3) {
+            animation: dotPulse 1.5s infinite 0.6s;
+        }
+
+        /* Animations */
+        @keyframes cardFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
+        }
 
-            .thank-you-container {
+        @keyframes widthIn {
+            to {
+                transform: scaleX(1);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes dotPulse {
+            0%, 100% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes bounceLeft {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(-5px);
+            }
+        }
+
+        @keyframes shine {
+            to {
+                transform: rotate(45deg) translateX(180px);
+            }
+        }
+
+        @keyframes bubbleIn {
+            to {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes textFadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .card-header {
                 padding: 1.5rem;
             }
 
-            h1 {
+            .card-header h1 {
                 font-size: 2rem;
             }
 
-            p {
-                font-size: 1rem;
+            .card-body {
+                padding: 1.5rem;
             }
 
-            .back-link {
-                padding: 8px 16px;
-                font-size: 1rem;
+            .success-icon {
+                width: 70px;
+                height: 70px;
+            }
+
+            .actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .emoji-container {
+                gap: 10px;
+            }
+
+            .emoji-btn {
+                font-size: 1.8rem;
             }
         }
 
         @media (max-width: 480px) {
-            h1 {
+            .thank-you-card {
+                margin: 1.5rem 0;
+            }
+
+            .card-header h1 {
                 font-size: 1.8rem;
             }
 
-            .back-link {
-                padding: 8px 14px;
+            .success-icon {
+                width: 60px;
+                height: 60px;
+            }
+
+            .progress-step {
+                width: 30px;
+                height: 30px;
                 font-size: 0.9rem;
+            }
+
+            .message {
+                font-size: 1rem;
+            }
+
+            .emoji-container {
+                gap: 8px;
+            }
+
+            .emoji-btn {
+                font-size: 1.6rem;
+            }
+
+            .btn {
+                font-size: 0.9rem;
+                padding: 10px 20px;
+            }
+
+            .social-btn {
+                width: 40px;
+                height: 40px;
+            }
+
+            .social-btn i {
+                font-size: 1.3rem;
             }
         }
     </style>
 </head>
 
 <body>
-    <div class="thank-you-container">
-        <h1>Thank You!</h1>
-        <p>Your message has been received. I appreciate you taking the time to reach out.</p>
-        <p>Till then you can connect with me on my Topmate account via redirecting your cursor on the below right corner and get suggestions along with guidance in <b>less amount!</b></p>
-        <p>I’ll get back to you as soon as possible!</p>
-        <a href="https://sahilfolio.live/" class="back-link">Back to My Portfolio</a>
+    <!-- Loading overlay -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="loader"></div>
     </div>
 
+    <!-- Particle background -->
+    <div id="particles-js"></div>
+
+    <!-- Back to top button -->
+    <div class="back-to-top" id="back-to-top">
+        <i class='bx bx-up-arrow-alt'></i>
+    </div>
+
+    <div class="container">
+        <div class="thank-you-card">
+            <div class="card-header">
+                <div class="success-icon">
+                    <i class='bx bx-check'></i>
+                </div>
+                <h1>Thank You!</h1>
+                <p>Your message has been successfully sent.</p>
+            </div>
+
+            <div class="card-body">
+                <div class="message-bubble">
+                    <div class="typing-dots" id="typing-dots">
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                    </div>
+                    <p class="message-text" id="message-text">
+                        Hi there! I've received your message and will get back to you very soon. Thanks for reaching out to me! 
+                        <span>- Sahil</span>
+                    </p>
+                </div>
+
+                <div class="progress-tracker">
+                    <div class="progress-steps" id="progress-steps">
+                        <div class="progress-step active" data-label="Message Received">1</div>
+                        <div class="progress-step" data-label="Under Review">2</div>
+                        <div class="progress-step" data-label="Response Coming">3</div>
+                    </div>
+                </div>
+
+                <p class="message">
+                    I appreciate you taking the time to reach out. I'll review your message and get back to you as soon as possible. In the meantime, feel free to explore more of my work or connect with me on social media.
+                </p>
+
+                <div class="feedback-section">
+                    <h3 class="feedback-title">How was your experience with my portfolio?</h3>
+                    <div class="emoji-container">
+                        <button class="emoji-btn" data-value="excellent" data-label="Excellent">
+                            🤩
+                            <span class="emoji-label">Excellent</span>
+                        </button>
+                        <button class="emoji-btn" data-value="good" data-label="Good">
+                            😊
+                            <span class="emoji-label">Good</span>
+                        </button>
+                        <button class="emoji-btn" data-value="okay" data-label="Okay">
+                            🙂
+                            <span class="emoji-label">Okay</span>
+                        </button>
+                        <button class="emoji-btn" data-value="disappointed" data-label="Could Be Better">
+                            😐
+                            <span class="emoji-label">Could Be Better</span>
+                        </button>
+                    </div>
+                    <p class="feedback-response" id="feedback-response"></p>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/sahilll94" target="_blank" class="social-btn" aria-label="LinkedIn">
+                        <i class='bx bxl-linkedin'></i>
+                    </a>
+                    <a href="https://github.com/Sahilll94" target="_blank" class="social-btn" aria-label="GitHub">
+                        <i class='bx bxl-github'></i>
+                    </a>
+                    <a href="https://x.com/Sa_hilll94" target="_blank" class="social-btn" aria-label="Twitter">
+                        <i class='bx bxl-twitter'></i>
+                    </a>
+                    <a href="https://medium.com/@sa_hilll94" target="_blank" class="social-btn" aria-label="Medium">
+                        <i class='bx bxl-medium'></i>
+                    </a>
+                </div>
+
+                <div class="actions">
+                    <a href="https://sahilfolio.live/" class="btn btn-primary">
+                        <i class='bx bx-left-arrow-alt'></i> Back to Portfolio
+                    </a>
+                    <a href="https://sahilfolio.live/#contact" class="btn btn-secondary">
+                        <i class='bx bx-envelope'></i> Contact Again
+                    </a>
+                </div>
+            </div>
+
+            <div class="card-footer">
+                &copy; 2025 <a href="https://sahilfolio.live/" target="_blank">Sahil</a> • All Rights Reserved
+            </div>
+        </div>
+    </div>
+
+    <!-- Topmate Widget Script -->
     <script
         src="https://topmate-embed.s3.ap-south-1.amazonaws.com/v1/topmate-embed.js"
         user-profile="https://topmate.io/embed/profile/sahilll94?theme=303030"
-        btn-style='{"backgroundColor":"#000","color":"#fff","border":"1px solid #000"}'
+        btn-style='{"backgroundColor":"#1C83E5","color":"#fff","border":"none"}'
         embed-version="v1"
-        button-text="Link up on Topmate"
+        button-text="Topmate"
         position-right="30px"
         position-bottom="30px"
-        custom-padding="0px"
+        custom-padding="10px 20px"
         custom-font-size="16px"
         custom-font-weight="700"
-        custom-width="200px"
+        custom-width="220px"
         async=""
         defer=""
-      ></script>
+    ></script>
+
+    <!-- Particles JS -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize particles
+            particlesJS("particles-js", {
+                particles: {
+                    number: {
+                        value: 80,
+                        density: {
+                            enable: true,
+                            value_area: 800
+                        }
+                    },
+                    color: {
+                        value: "#1C83E5"
+                    },
+                    shape: {
+                        type: "circle",
+                        stroke: {
+                            width: 0,
+                            color: "#000000"
+                        }
+                    },
+                    opacity: {
+                        value: 0.3,
+                        random: true,
+                        animation: {
+                            enable: true,
+                            speed: 1,
+                            opacity_min: 0.1,
+                            sync: false
+                        }
+                    },
+                    size: {
+                        value: 3,
+                        random: true,
+                        animation: {
+                            enable: true,
+                            speed: 2,
+                            size_min: 0.1,
+                            sync: false
+                        }
+                    },
+                    line_linked: {
+                        enable: true,
+                        distance: 150,
+                        color: "#1C83E5",
+                        opacity: 0.2,
+                        width: 1
+                    },
+                    move: {
+                        enable: true,
+                        speed: 1,
+                        direction: "none",
+                        random: true,
+                        straight: false,
+                        out_mode: "out",
+                        bounce: false,
+                    }
+                },
+                interactivity: {
+                    detect_on: "canvas",
+                    events: {
+                        onhover: {
+                            enable: true,
+                            mode: "grab"
+                        },
+                        onclick: {
+                            enable: true,
+                            mode: "push"
+                        },
+                        resize: true
+                    },
+                    modes: {
+                        grab: {
+                            distance: 140,
+                            line_linked: {
+                                opacity: 0.5
+                            }
+                        },
+                        push: {
+                            particles_nb: 4
+                        }
+                    }
+                },
+                retina_detect: true
+            });
+
+            // Remove loading overlay after a delay
+            setTimeout(() => {
+                const loadingOverlay = document.getElementById('loading-overlay');
+                loadingOverlay.style.opacity = '0';
+                loadingOverlay.style.visibility = 'hidden';
+            }, 1800);
+
+            // Progress steps
+            const progressSteps = document.querySelector('.progress-steps');
+            setTimeout(() => {
+                progressSteps.style.setProperty('--progress', '100%');
+                progressSteps.style.setProperty('--transition-delay', '0.5s');
+                
+                // Animate progress steps
+                setTimeout(() => {
+                    progressSteps.style.setProperty('--progress', '33%');
+                    document.querySelectorAll('.progress-step')[0].classList.add('complete');
+                    progressSteps.style.setProperty('--transition-delay', '0s');
+                    progressSteps.querySelectorAll('.progress-step')[1].classList.add('active');
+                }, 1000);
+                
+                // Update progress after some time
+                setTimeout(() => {
+                    progressSteps.style.setProperty('--progress', '66%');
+                    document.querySelectorAll('.progress-step')[1].classList.add('complete');
+                    progressSteps.querySelectorAll('.progress-step')[2].classList.add('active');
+                }, 3000);
+                
+                // Complete progress
+                setTimeout(() => {
+                    progressSteps.style.setProperty('--progress', '100%');
+                    document.querySelectorAll('.progress-step')[2].classList.add('complete');
+                }, 5000);
+            }, 2500);
+            
+            // Progress bar animation
+            setTimeout(() => {
+                progressSteps.style.setProperty('--after-width', '100%');
+            }, 1500);
+
+            // Emoji feedback buttons
+            const emojiButtons = document.querySelectorAll('.emoji-btn');
+            emojiButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove selected class from all buttons
+                    emojiButtons.forEach(b => b.classList.remove('selected'));
+                    
+                    // Add selected class to clicked button
+                    this.classList.add('selected');
+                    
+                    // Update feedback response
+                    const feedbackResponse = document.getElementById('feedback-response');
+                    feedbackResponse.textContent = `Thank you for your ${this.dataset.label.toLowerCase()} feedback!`;
+                    feedbackResponse.style.opacity = '1';
+                    
+                    // Store feedback in localStorage
+                    localStorage.setItem('portfolioFeedback', this.dataset.value);
+                });
+            });
+
+            // Typing animation
+            setTimeout(() => {
+                document.getElementById('typing-dots').style.display = 'none';
+            }, 2500);
+
+            // Back to top functionality
+            const backToTop = document.getElementById('back-to-top');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
+            
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Add visible class to progress step labels on hover
+            const progressStepElements = document.querySelectorAll('.progress-step');
+            progressStepElements.forEach(step => {
+                step.addEventListener('mouseenter', function() {
+                    const label = this.dataset.label;
+                    if (label) {
+                        const labelElement = document.createElement('span');
+                        labelElement.classList.add('step-label');
+                        labelElement.textContent = label;
+                        this.appendChild(labelElement);
+                        setTimeout(() => {
+                            labelElement.style.opacity = '1';
+                        }, 50);
+                    }
+                });
+                
+                step.addEventListener('mouseleave', function() {
+                    const labelElement = this.querySelector('.step-label');
+                    if (labelElement) {
+                        labelElement.style.opacity = '0';
+                        setTimeout(() => {
+                            this.removeChild(labelElement);
+                        }, 300);
+                    }
+                });
+            });
+
+            // Load saved feedback if available
+            const savedFeedback = localStorage.getItem('portfolioFeedback');
+            if (savedFeedback) {
+                const savedButton = Array.from(emojiButtons).find(btn => btn.dataset.value === savedFeedback);
+                if (savedButton) {
+                    savedButton.classList.add('selected');
+                    const feedbackResponse = document.getElementById('feedback-response');
+                    feedbackResponse.textContent = `Thank you for your ${savedButton.dataset.label.toLowerCase()} feedback!`;
+                    feedbackResponse.style.opacity = '1';
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>

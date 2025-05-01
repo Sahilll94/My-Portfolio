@@ -192,7 +192,6 @@ img {
   animation: blink 0.8s infinite;
 }
 
-
 /* Ensure nav items are visible against transparency */
 .nav__logo,
 .nav__link {
@@ -208,17 +207,62 @@ img {
   /* Highlight color on hover */
 }
 
-
+/* Mobile Menu Toggle Styling - Complete Rewrite */
 @media screen and (max-width: 767px) {
   .nav__menu {
     position: fixed;
     top: var(--header-height);
-    right: -100%;
-    width: 60%;
-    height: 100vh;
+    right: -100%; /* Start off-screen */
+    width: 80%;
+    height: 100%;
     padding: 2rem;
-    background-color: hsl(var(--hue-color), 56%, 12%);
-    transition: .5s;
+    background-color: rgba(24, 26, 27, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    transition: all 0.3s ease-out;
+    z-index: 100;
+    overflow-y: auto;
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .nav__menu.show {
+    right: 0; /* Slide in when show class is applied */
+  }
+  
+  .nav__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    padding-top: 1rem;
+  }
+  
+  .nav__item {
+    margin-bottom: 0;
+    text-align: center;
+  }
+  
+  .nav__link {
+    font-size: 1.2rem;
+    display: inline-block;
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+  
+  .nav__toggle {
+    display: block !important;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--second-color);
+    transition: color 0.3s;
+  }
+  
+  .nav__toggle:hover {
+    color: var(--first-color);
+  }
+  
+  /* Prevent scrolling when menu is open */
+  body.menu-open {
+    overflow: hidden;
   }
 }
 
@@ -229,10 +273,12 @@ img {
 .nav__link {
   position: relative;
   color: #ffffff;
+  transition: color 0.3s ease;
 }
 
 .nav__link:hover {
   position: relative;
+  color: var(--first-color);
 }
 
 .nav__link:hover::after {
@@ -271,8 +317,84 @@ img {
   right: 0;
 }
 
-/*===== HOME =====*/
+/* Hamburger Menu Styling */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
 
+.hamburger-line {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger animation when active */
+.nav__toggle.active .hamburger-line:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.nav__toggle.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.nav__toggle.active .hamburger-line:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Mobile footer navigation */
+.mobile-footer-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(24, 26, 27, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 15px;
+  display: none;
+  z-index: 99;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.mobile-footer-nav.show {
+  transform: translateY(0);
+}
+
+.mobile-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.mobile-footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 8px 12px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.mobile-footer-links a:hover, 
+.mobile-footer-links a:active {
+  background-color: var(--first-color);
+  transform: translateY(-3px);
+}
+
+/*===== HOME =====*/
 .typed-text {
   font-size: 2em;
   /* Adjust as needed */
@@ -325,7 +447,55 @@ img {
 }
 
 .home__blob-img {
-  width: 360px;
+  width: 290px;
+}
+
+/* Responsive adjustments for home section */
+@media screen and (max-width: 768px) {
+  .home {
+    padding: 6rem 0 2rem;
+  }
+  
+  .home__data {
+    text-align: center;
+  }
+  
+  .home__title {
+    font-size: 2.2rem;
+  }
+  
+  .home__img {
+    position: relative;
+    width: 70%;
+    max-width: 300px;
+    margin: 0 auto;
+    top: -2rem; /* Moved up from 2rem to -2rem to position it higher */
+  }
+  
+  .home__social {
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 2rem;
+  }
+  
+  .home__social-icon {
+    margin: 0 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .home__title {
+    font-size: 1.8rem;
+  }
+  
+  .home__img {
+    width: 85%;
+  }
+  
+  .button {
+    padding: .6rem 1.8rem;
+    font-size: 0.9rem;
+  }
 }
 
 /*BUTTONS*/
@@ -482,23 +652,26 @@ img {
 .projects__container {
   display: flex;
   gap: 30px; /* Space between each project card */
-  justify-content: space-between; /* Distribute the space between the cards */
+  justify-content: center; /* Center the cards */
   flex-wrap: wrap;
-  margin: 100px;
+  margin: 3rem auto;
+  max-width: 1200px;
+  padding: 0 20px;
 }
 
 .project__title {
   font-family: 'Roboto';
   text-align: center;
-  /* margin-top: 1px; */
-  font-size: 12px;
+  font-size: 16px;
   font-weight: bold;
   color: black;
+  margin-bottom: 10px;
 }
 
 .project__card {
   position: relative;
-  width: 27%; /* Three items per row (100% / 3 = 33.33%, but we keep 30% for gap space) */
+  width: 30%; /* Three items per row */
+  min-width: 280px;
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -507,6 +680,7 @@ img {
   flex-direction: column;
   padding: 15px;
   transition: all 0.3s ease-in-out;
+  margin-bottom: 30px;
 }
 
 .project__card:hover {
@@ -569,27 +743,25 @@ img {
 .project__description {
   font-family: 'Nunito'; 
   text-align: justify;
-  font-size: 18px;
+  font-size: 16px;
   color: #000000;
-  margin-bottom: 10px;
-  /* margin-top: 1px; */
-  /* padding: 0 10px; */
+  margin-bottom: 15px;
+  flex-grow: 1;
 }
 
 .tag-container {
-  width: 100%;         /* Adjust width as per requirement */
-  max-width: 100%;     /* Prevents overflow */
-  overflow: hidden;    /* Hides tags that overflow */
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
   box-sizing: border-box;
 }
-
 
 .project__tags {
   display: flex;
   justify-content: flex-start;
-  flex-wrap: wrap;  /* Ensures tags wrap to the next line if needed */
-  gap: 8px;         /* Space between the tags */
-  max-width: 100%;   /* Prevents overflow */
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: 100%;
   margin-top: 5px;
 }
 
@@ -611,10 +783,14 @@ img {
   margin-bottom: 5px;
 }
 
-
 .project__link {
   color: black;
   margin: 0 10px;
+  transition: transform 0.3s ease;
+}
+
+.project__link:hover {
+  transform: translateY(-5px);
 }
 
 .project__link i {
@@ -624,24 +800,45 @@ img {
 /* Media Queries for Responsiveness */
 @media (max-width: 1200px) {
   .project__card {
-    width: 30%; /* Three items per row on medium screens */
+    width: calc(50% - 30px);
+    min-width: 250px;
   }
 }
 
 @media (max-width: 900px) {
+  .projects__container {
+    gap: 20px;
+  }
+  
   .project__card {
-    width: 45%; /* Two items per row on smaller screens */
+    width: calc(50% - 20px);
+    min-width: 220px;
   }
 }
 
 @media (max-width: 600px) {
-  .project__card {
-    width: 100%; /* One item per row on mobile */
-    margin-bottom: 30px; /* Adds space between items */
-  }
-
   .projects__container {
-    margin: 20px; /* Reduces margin for mobile screens */
+    margin: 2rem 15px;
+    gap: 15px;
+  }
+  
+  .project__card {
+    width: 100%;
+    min-width: unset;
+    margin-bottom: 20px;
+  }
+  
+  .project__description {
+    font-size: 14px;
+  }
+  
+  .project__tag {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+  
+  .project__link i {
+    font-size: 24px;
   }
 }
 
@@ -702,6 +899,13 @@ img {
 
 .footer__copy {
   font-size: var(--smaller-font-size);
+}
+
+.footer-logo-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 /* ===== MEDIA QUERIES=====*/

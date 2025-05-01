@@ -1,25 +1,89 @@
-/*===== MENU SHOW =====*/
-const showMenu = (toggleId, navId) => {
-  const toggle = document.getElementById(toggleId);
-  const nav = document.getElementById(navId);
-
-  if (toggle && nav) {
-    toggle.addEventListener("click", () => {
-      nav.classList.toggle("show");
+// Mobile menu toggle functionality - Complete rewrite
+document.addEventListener('DOMContentLoaded', function() {
+  const navToggle = document.getElementById('nav-toggle');
+  const navMenu = document.getElementById('nav-menu');
+  const navLinks = document.querySelectorAll('.nav__link');
+  
+  // Toggle menu visibility when hamburger icon is clicked
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', function() {
+      navMenu.classList.toggle('show');
+      document.body.classList.toggle('menu-open');
+      
+      // Toggle aria-expanded for accessibility
+      const isExpanded = navMenu.classList.contains('show');
+      navToggle.setAttribute('aria-expanded', isExpanded);
     });
   }
-};
-showMenu("nav-toggle", "nav-menu");
+  
+  // Close menu when a link is clicked
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      navMenu.classList.remove('show');
+      document.body.classList.remove('menu-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+  
+  // Close menu when clicking outside
+  document.addEventListener('click', function(event) {
+    const isClickInsideMenu = navMenu.contains(event.target);
+    const isClickOnToggle = navToggle.contains(event.target);
+    
+    if (navMenu.classList.contains('show') && !isClickInsideMenu && !isClickOnToggle) {
+      navMenu.classList.remove('show');
+      document.body.classList.remove('menu-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+  
+  // Add proper ARIA attributes for accessibility
+  navToggle.setAttribute('aria-controls', 'nav-menu');
+  navToggle.setAttribute('aria-expanded', 'false');
+  navToggle.setAttribute('aria-label', 'Toggle navigation menu');
+});
 
-/*==================== REMOVE MENU MOBILE ====================*/
-const navLink = document.querySelectorAll(".nav__link");
+// Hamburger menu and mobile footer navigation functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const navToggle = document.getElementById('nav-toggle');
+  const mobileFooterNav = document.getElementById('mobile-footer-nav');
+  
+  // Show/hide mobile footer navigation when hamburger is clicked
+  if (navToggle && mobileFooterNav) {
+    // Initially show the mobile footer navigation - just in case it's hidden by CSS
+    mobileFooterNav.style.display = 'block';
+    
+    navToggle.addEventListener('click', function() {
+      // Toggle hamburger animation
+      this.classList.toggle('active');
+      
+      // Toggle mobile footer navigation
+      if (mobileFooterNav.classList.contains('show')) {
+        mobileFooterNav.classList.remove('show');
+        setTimeout(() => {
+          mobileFooterNav.style.transform = 'translateY(100%)';
+        }, 10);
+      } else {
+        mobileFooterNav.classList.add('show');
+        mobileFooterNav.style.transform = 'translateY(0)';
+      }
+    });
+    
+    // Close mobile footer navigation when clicking a link
+    const mobileFooterLinks = mobileFooterNav.querySelectorAll('a');
+    mobileFooterLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        mobileFooterNav.classList.remove('show');
+        navToggle.classList.remove('active');
+        setTimeout(() => {
+          mobileFooterNav.style.transform = 'translateY(100%)';
+        }, 10);
+      });
+    });
+  }
+});
 
-function linkAction() {
-  const navMenu = document.getElementById("nav-menu");
-  // When we click on each nav__link, we remove the show-menu class
-  navMenu.classList.remove("show");
-}
-navLink.forEach((n) => n.addEventListener("click", linkAction));
+// Keep existing ScrollReveal and Typed.js initializations
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll("section[id]");
