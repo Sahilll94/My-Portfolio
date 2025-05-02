@@ -189,7 +189,7 @@ img {
   /* Fixes the header at the top */
   width: 100%;
   /* Ensures it spans the full width */
-  background-color: rgba(24, 26, 27, 0.8);
+  background-color: rgba(24, 26, 27, 0.95);
   /* Semi-transparent black background */
   backdrop-filter: blur(10px);
   /* Optional: Adds a glass-like blur effect */
