@@ -121,6 +121,7 @@
                     <li class="nav__item"><a href="#skill" class="nav__link">Skills</a></li>
                     <li class="nav__item"><a href="#work" class="nav__link">Work Experience</a></li>
                     <li class="nav__item"><a href="#codingprofile" class="nav__link">Coding Profiles</a></li>
+                    <li class="nav__item"><a href="#achievements" class="nav__link">Achievements</a></li>
                     <li class="nav__item"><a href="#blogs" class="nav__link">Articles</a></li>
                     <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
                     <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
@@ -965,6 +966,27 @@
                     // Add initial invisible class
                     item.classList.add('timeline-item-hidden');
                 });
+
+                // Animation for achievement cards on scroll
+                const achievementObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('animate-achievement-card');
+                            achievementObserver.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.2
+                });
+                
+                // Observe all achievement cards
+                document.querySelectorAll('.achievement-card').forEach((card, index) => {
+                    achievementObserver.observe(card);
+                    // Add initial invisible class
+                    card.classList.add('achievement-card-hidden');
+                    // Add staggered animation delay
+                    card.style.animationDelay = `${index * 0.2}s`;
+                });
             });
         </script>
 
@@ -980,6 +1002,16 @@
                 animation: fadeInUp 0.8s forwards;
             }
             
+            /* Achievement card animations */
+            .achievement-card-hidden {
+                opacity: 0;
+                transform: translateY(50px) scale(0.9);
+            }
+            
+            .animate-achievement-card {
+                animation: fadeInUpScale 0.8s forwards;
+            }
+            
             @keyframes fadeInUp {
                 from {
                     opacity: 0;
@@ -988,6 +1020,17 @@
                 to {
                     opacity: 1;
                     transform: translateY(0);
+                }
+            }
+            
+            @keyframes fadeInUpScale {
+                from {
+                    opacity: 0;
+                    transform: translateY(50px) scale(0.9);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0) scale(1);
                 }
             }
             
@@ -1188,7 +1231,482 @@
 
         </section>
 
+        <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
 
+        <!-- CODING ACHIEVEMENTS SECTION -->
+        <section class="achievements section" id="achievements">
+            <h2 class="section-title">Coding Achievements & Recognition</h2>
+            
+            <div class="achievements__container">
+                <div class="achievements-grid">
+                    
+                    <!-- Achievement Badge 1 - 100 Days 2025 -->
+                    <div class="achievement-card">
+                        <div class="achievement-badge">
+                            <img src="assets/img/leetcode-badges/100-days-badge-2025.png" alt="100 Days of Badge 2025" class="badge-image">
+                        </div>
+                        <div class="achievement-content">
+                            <h3 class="achievement-title">100 Days of Badge 2025</h3>
+                            <div class="achievement-date">
+                                <i class='bx bx-calendar'></i>
+                                <span>July 20, 2025</span>
+                            </div>
+                            <div class="achievement-platform">
+                                <i class='bx bx-code-alt'></i>
+                                <a href="https://leetcode.com/u/sa_hilll94/" target="_blank" class="platform-link">
+                                    <span>LeetCode</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Achievement Badge 2 - 50 Days 2025 -->
+                    <div class="achievement-card">
+                        <div class="achievement-badge">
+                            <img src="assets/img/leetcode-badges/50-days-badge-2025.png" alt="50 Days of Badge 2025" class="badge-image">
+                        </div>
+                        <div class="achievement-content">
+                            <h3 class="achievement-title">50 Days of Badge 2025</h3>
+                            <div class="achievement-date">
+                                <i class='bx bx-calendar'></i>
+                                <span>February 20, 2025</span>
+                            </div>
+                            <div class="achievement-platform">
+                                <i class='bx bx-code-alt'></i>
+                                <a href="https://leetcode.com/u/sa_hilll94/" target="_blank" class="platform-link">
+                                    <span>LeetCode</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Achievement Badge 3 - 100 Days 2024 -->
+                    <div class="achievement-card">
+                        <div class="achievement-badge">
+                            <img src="assets/img/leetcode-badges/100-days-badge-2024.png" alt="100 Days of Badge 2024" class="badge-image">
+                        </div>
+                        <div class="achievement-content">
+                            <h3 class="achievement-title">100 Days of Badge 2024</h3>
+                            <div class="achievement-date">
+                                <i class='bx bx-calendar'></i>
+                                <span>November 27, 2024</span>
+                            </div>
+                            <div class="achievement-platform">
+                                <i class='bx bx-code-alt'></i>
+                                <a href="https://leetcode.com/u/sa_hilll94/" target="_blank" class="platform-link">
+                                    <span>LeetCode</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Achievement Badge 4 - 50 Days 2024 -->
+                    <div class="achievement-card">
+                        <div class="achievement-badge">
+                            <img src="assets/img/leetcode-badges/50-days-badge-2024.png" alt="50 Days of Badge 2024" class="badge-image">
+                        </div>
+                        <div class="achievement-content">
+                            <h3 class="achievement-title">50 Days of Badge 2024</h3>
+                            <div class="achievement-date">
+                                <i class='bx bx-calendar'></i>
+                                <span>October 7, 2024</span>
+                            </div>
+                            <div class="achievement-platform">
+                                <i class='bx bx-code-alt'></i>
+                                <a href="https://leetcode.com/u/sa_hilll94/" target="_blank" class="platform-link">
+                                    <span>LeetCode</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Achievement Badge 5 - Feb LeetCoding Challenge 2025 -->
+                    <div class="achievement-card">
+                        <div class="achievement-badge">
+                            <img src="assets/img/leetcode-badges/feb-leetcoding-challenge-2025.png" alt="February LeetCoding Challenge 2025" class="badge-image">
+                        </div>
+                        <div class="achievement-content">
+                            <h3 class="achievement-title">February LeetCoding Challenge 2025</h3>
+                            <div class="achievement-date">
+                                <i class='bx bx-calendar'></i>
+                                <span>February 28, 2025</span>
+                            </div>
+                            <div class="achievement-platform">
+                                <i class='bx bx-code-alt'></i>
+                                <a href="https://leetcode.com/u/sa_hilll94/" target="_blank" class="platform-link">
+                                    <span>LeetCode</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Achievement Badge 6 - Jan LeetCoding Challenge 2025 -->
+                    <div class="achievement-card">
+                        <div class="achievement-badge">
+                            <img src="assets/img/leetcode-badges/jan-leetcoding-challenge-2025.png" alt="January LeetCoding Challenge 2025" class="badge-image">
+                        </div>
+                        <div class="achievement-content">
+                            <h3 class="achievement-title">January LeetCoding Challenge 2025</h3>
+                            <div class="achievement-date">
+                                <i class='bx bx-calendar'></i>
+                                <span>January 31, 2025</span>
+                            </div>
+                            <div class="achievement-platform">
+                                <i class='bx bx-code-alt'></i>
+                                <a href="https://leetcode.com/u/sa_hilll94/" target="_blank" class="platform-link">
+                                    <span>LeetCode</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Achievement Badge 7 - Dec LeetCoding Challenge 2024 -->
+                    <div class="achievement-card">
+                        <div class="achievement-badge">
+                            <img src="assets/img/leetcode-badges/dec-leetcoding-challenge-2024.png" alt="December LeetCoding Challenge 2024" class="badge-image">
+                        </div>
+                        <div class="achievement-content">
+                            <h3 class="achievement-title">December LeetCoding Challenge 2024</h3>
+                            <div class="achievement-date">
+                                <i class='bx bx-calendar'></i>
+                                <span>December 31, 2024</span>
+                            </div>
+                            <div class="achievement-platform">
+                                <i class='bx bx-code-alt'></i>
+                                <a href="https://leetcode.com/u/sa_hilll94/" target="_blank" class="platform-link">
+                                    <span>LeetCode</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Achievement Badge 8 - Nov LeetCoding Challenge 2024 -->
+                    <div class="achievement-card">
+                        <div class="achievement-badge">
+                            <img src="assets/img/leetcode-badges/nov-leetcoding-challenge-2024.png" alt="November LeetCoding Challenge 2024" class="badge-image">
+                        </div>
+                        <div class="achievement-content">
+                            <h3 class="achievement-title">November LeetCoding Challenge 2024</h3>
+                            <div class="achievement-date">
+                                <i class='bx bx-calendar'></i>
+                                <span>November 30, 2024</span>
+                            </div>
+                            <div class="achievement-platform">
+                                <i class='bx bx-code-alt'></i>
+                                <a href="https://leetcode.com/u/sa_hilll94/" target="_blank" class="platform-link">
+                                    <span>LeetCode</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Achievement Badge 9 - Oct LeetCoding Challenge 2024 -->
+                    <div class="achievement-card">
+                        <div class="achievement-badge">
+                            <img src="assets/img/leetcode-badges/oct-leetcoding-challenge-2024.png" alt="October LeetCoding Challenge 2024" class="badge-image">
+                        </div>
+                        <div class="achievement-content">
+                            <h3 class="achievement-title">October LeetCoding Challenge 2024</h3>
+                            <div class="achievement-date">
+                                <i class='bx bx-calendar'></i>
+                                <span>October 31, 2024</span>
+                            </div>
+                            <div class="achievement-platform">
+                                <i class='bx bx-code-alt'></i>
+                                <a href="https://leetcode.com/u/sa_hilll94/" target="_blank" class="platform-link">
+                                    <span>LeetCode</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section Styles -->
+        <style>
+            /* Achievements Container */
+            .achievements__container {
+                max-width: 1000px;
+                margin: 2rem auto;
+                padding: 0 20px;
+            }
+            
+            .achievements-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 30px;
+                margin-top: 2rem;
+                justify-items: center;
+            }
+            
+            /* Ensure exactly 3 columns on larger screens */
+            @media screen and (min-width: 1024px) {
+                .achievements-grid {
+                    grid-template-columns: repeat(3, 1fr);
+                    max-width: 1000px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+            
+            /* 2 columns on tablets */
+            @media screen and (max-width: 1023px) and (min-width: 768px) {
+                .achievements-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                    max-width: 700px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+            
+            /* 1 column on mobile */
+            @media screen and (max-width: 767px) {
+                .achievements-grid {
+                    grid-template-columns: 1fr;
+                    max-width: 400px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+            
+            /* Achievement Card */
+            .achievement-card {
+                background: linear-gradient(145deg, #242526, #2c2d2e);
+                border-radius: 20px;
+                padding: 30px;
+                text-align: center;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+                border: 2px solid transparent;
+                background-clip: padding-box;
+                transition: all 0.4s ease;
+                position: relative;
+                overflow: hidden;
+                width: 100%;
+                max-width: 320px;
+                min-height: 300px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+            
+            .achievement-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(135deg, rgba(28, 131, 225, 0.1), rgba(28, 131, 225, 0.05));
+                opacity: 0;
+                transition: opacity 0.4s ease;
+                border-radius: 20px;
+            }
+            
+            .achievement-card:hover::before {
+                opacity: 1;
+            }
+            
+            .achievement-card:hover {
+                transform: translateY(-10px) scale(1.02);
+                box-shadow: 0 20px 40px rgba(28, 131, 225, 0.2);
+                border-color: rgba(28, 131, 225, 0.3);
+            }
+            
+            /* Badge Image Container */
+            .achievement-badge {
+                width: 120px;
+                height: 120px;
+                margin: 0 auto 25px;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+                border-radius: 50%;
+                padding: 15px;
+                transition: all 0.4s ease;
+            }
+            
+            .achievement-card:hover .achievement-badge {
+                transform: scale(1.1) rotate(5deg);
+                background: linear-gradient(135deg, rgba(28, 131, 225, 0.2), rgba(28, 131, 225, 0.1));
+                box-shadow: 0 10px 25px rgba(28, 131, 225, 0.3);
+            }
+            
+            .badge-image {
+                width: 90px;
+                height: 90px;
+                object-fit: contain;
+                filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+                transition: all 0.4s ease;
+            }
+            
+            .achievement-card:hover .badge-image {
+                filter: drop-shadow(0 8px 20px rgba(28, 131, 225, 0.4));
+            }
+            
+            /* Achievement Content */
+            .achievement-content {
+                position: relative;
+                z-index: 2;
+            }
+            
+            .achievement-title {
+                font-size: 1.4rem;
+                color: #fff;
+                margin-bottom: 20px;
+                font-weight: 700;
+                transition: all 0.3s ease;
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            }
+            
+            .achievement-card:hover .achievement-title {
+                color: var(--first-color);
+                text-shadow: 0 2px 8px rgba(28, 131, 225, 0.4);
+            }
+            
+            .achievement-date,
+            .achievement-platform {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                margin-bottom: 12px;
+                color: #c1c1c1;
+                font-size: 0.95rem;
+                font-weight: 500;
+                transition: all 0.3s ease;
+            }
+            
+            .platform-link {
+                color: inherit;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                border-radius: 15px;
+                padding: 3px 8px;
+                display: inline-block;
+            }
+            
+            .platform-link:hover {
+                color: var(--first-color);
+                background-color: rgba(28, 131, 225, 0.1);
+                transform: translateY(-1px);
+            }
+            
+            .achievement-date i,
+            .achievement-platform i {
+                font-size: 1.1rem;
+                color: var(--first-color);
+                transition: all 0.3s ease;
+            }
+            
+            .achievement-card:hover .achievement-date,
+            .achievement-card:hover .achievement-platform {
+                color: #e0e0e0;
+            }
+            
+            .achievement-card:hover .achievement-date i,
+            .achievement-card:hover .achievement-platform i {
+                transform: scale(1.2);
+                color: #fff;
+            }
+            
+            /* Achievement Badge Glow Effect */
+            .achievement-badge::after {
+                content: '';
+                position: absolute;
+                top: -2px;
+                left: -2px;
+                right: -2px;
+                bottom: -2px;
+                background: linear-gradient(45deg, 
+                    var(--first-color), 
+                    transparent, 
+                    var(--first-color), 
+                    transparent, 
+                    var(--first-color)
+                );
+                border-radius: 50%;
+                opacity: 0;
+                transition: opacity 0.4s ease;
+                z-index: -1;
+                animation: rotate 3s linear infinite;
+            }
+            
+            .achievement-card:hover .achievement-badge::after {
+                opacity: 0.6;
+            }
+            
+            @keyframes rotate {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+            
+            /* Responsive Design */
+            @media screen and (max-width: 768px) {
+                .achievements-grid {
+                    grid-template-columns: 1fr;
+                    gap: 20px;
+                }
+                
+                .achievement-card {
+                    padding: 25px 20px;
+                }
+                
+                .achievement-badge {
+                    width: 100px;
+                    height: 100px;
+                    margin-bottom: 20px;
+                }
+                
+                .badge-image {
+                    width: 75px;
+                    height: 75px;
+                }
+                
+                .achievement-title {
+                    font-size: 1.2rem;
+                }
+                
+                .achievement-date,
+                .achievement-platform {
+                    font-size: 0.9rem;
+                }
+            }
+            
+            @media screen and (max-width: 480px) {
+                .achievements__container {
+                    padding: 0 15px;
+                }
+                
+                .achievement-card {
+                    padding: 20px 15px;
+                }
+                
+                .achievement-badge {
+                    width: 80px;
+                    height: 80px;
+                }
+                
+                .badge-image {
+                    width: 60px;
+                    height: 60px;
+                }
+                
+                .achievement-title {
+                    font-size: 1.1rem;
+                    margin-bottom: 15px;
+                }
+                
+                .achievement-date,
+                .achievement-platform {
+                    font-size: 0.85rem;
+                    margin-bottom: 10px;
+                }
+            }
+        </style>
 
         <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
 
