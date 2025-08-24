@@ -62,22 +62,22 @@
 
 
     <script>
-  // Detect if the environment is production (you can modify this check)
-  var isProduction = location.hostname !== "localhost" && !location.hostname.includes("127.0.0.1");
+        // Detect if the environment is production (you can modify this check)
+        var isProduction = location.hostname !== "localhost" && !location.hostname.includes("127.0.0.1");
 
-  if (isProduction) {
-    console.error = function () {};
-    console.warn = function () {};
-    window.onerror = function () {
-      return true; // Suppress all errors
-    };
-    window.addEventListener("error", function (event) {
-      event.preventDefault(); // Prevents error messages from being logged
-    }, true);
-  }
-</script>
+        if (isProduction) {
+            console.error = function () { };
+            console.warn = function () { };
+            window.onerror = function () {
+                return true; // Suppress all errors
+            };
+            window.addEventListener("error", function (event) {
+                event.preventDefault(); // Prevents error messages from being logged
+            }, true);
+        }
+    </script>
 
-    
+
 </head>
 
 <body>
@@ -98,7 +98,7 @@
 </a> -->
 
 
-<!--                 <a href="https://www.npmjs.com/package/sahil-cli" target="_blank" class="nav__logo">
+                <!--                 <a href="https://www.npmjs.com/package/sahil-cli" target="_blank" class="nav__logo">
                     <span style="font-family: 'Courier New', monospace; color: #0f0;">> npx sahil-cli</span>
                     <span class="cursor"></span>
                 </a> -->
@@ -127,7 +127,7 @@
                     <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
                 </ul>
             </div>
-            
+
             <!-- HAMBURGER ICON -->
             <!-- <div class="nav__toggle" id="nav-toggle">
                 <div class="hamburger">
@@ -208,10 +208,10 @@
         <br></br>
         <br></br>
         <br></br>
-        
+
         <!-- Add the initialization script for Typed.js -->
         <script>
-            document.addEventListener('DOMContentLoaded', function() {
+            document.addEventListener('DOMContentLoaded', function () {
                 var typed = new Typed('#typed', {
                     stringsElement: '#typed-strings',
                     typeSpeed: 50,
@@ -387,12 +387,12 @@
         <!--===== WORK EXPERIENCE =====-->
         <section class="work section" id="work">
             <h2 class="section-title">Work Experience</h2>
-            
+
             <!-- Enhanced timeline-based work experience section -->
             <div class="experience-timeline">
 
                 <!-- Kalvium Internship -->
-                 <div class="timeline-item">
+                <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">
                         <span>June 2025 - Present </span>
@@ -413,27 +413,40 @@
                             </div>
                         </div>
                         <div class="timeline-body">
-                            <p>I'm currently working as a Project Engineer Intern at Kalvium, where I'm learning and contributing to projects that focus on innovative, real-world tech education.</p>
-                            <!-- <div class="timeline-details">
+                            <p>Contributing to mobile app development, GenAI agents, and DSA content creation at
+                                Kalvium, an EdTech company empowering future engineers.</p>
+                            <div class="timeline-details">
                                 <ul class="responsibility-list">
-                                    <li><i class='bx bx-check-circle'></i> Contributing to software development projects and technical solutions</li>
-                                    <li><i class='bx bx-check-circle'></i> Collaborating with team members to implement innovative features</li>
-                                    <li><i class='bx bx-check-circle'></i> Applying problem-solving skills to optimize existing systems</li>
-                                    <li><i class='bx bx-check-circle'></i> Learning and implementing industry best practices in a professional environment</li>
+                                    <li><i class='bx bx-check-circle'></i> Developing mobile applications using Expo and
+                                        React Native as part of the course engineering team.</li>
+                                    <li><i class='bx bx-check-circle'></i> Building intelligent agents with Generative
+                                        AI (GenAI) to create adaptive and interactive learning experiences.</li>
+                                    <li><i class='bx bx-check-circle'></i> Designed DSA-based coding problems with
+                                        structured test cases and explanations for the company’s learning platform.</li>
+                                    <li><i class='bx bx-check-circle'></i> Collaborating with cross-functional teams to
+                                        integrate AI-driven features into educational workflows.</li>
+                                    <li><i class='bx bx-check-circle'></i> Applying full-stack development knowledge to
+                                        contribute scalable and maintainable product features.</li>
+                                    <li><i class='bx bx-check-circle'></i> Participating in content engineering to align
+                                        coding challenges with real-world problem-solving standards.</li>
                                 </ul>
-                            </div> -->
+                            </div>
                             <div class="timeline-skills">
-                                <!-- <span class="skill-tag">Software Development</span> -->
-                                <span class="skill-tag">Problem Solving</span>
-                                <span class="skill-tag">Teamwork</span>
-                                <span class="skill-tag">Technical Skills</span>
+                                <span class="skill-tag">React Native</span>
+                                <span class="skill-tag">Expo</span>
+                                <span class="skill-tag">Generative AI</span>
+                                <span class="skill-tag">Full-Stack Development</span>
+                                <span class="skill-tag">DSA Problem Setter</span>
+                                <span class="skill-tag">Collaboration</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                 <!-- DhobiG Technical (SD) Internship -->
-                 <div class="timeline-item">
+
+
+                <!-- DhobiG Technical (SD) Internship -->
+                <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">
                         <span>February 2025 - April 2025 </span>
@@ -441,7 +454,7 @@
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <div class="timeline-header-content">
-                                <h3 class="timeline-title">Technical (SD) Intern</h3>
+                                <h3 class="timeline-title">Technical (Software Development) Intern</h3>
                                 <div class="timeline-company">
                                     <a href="https://dhobig.com/" target="_blank" class="company-link">
                                         Dhobi G
@@ -454,25 +467,36 @@
                             </div>
                         </div>
                         <div class="timeline-body">
-                            <p>I was working as a Technical Software Development Intern at Dhobi G, where I'm gaining hands-on experience in real-world software development and problem-solving while collaborating with a talented team.</p>
+                            <p>Worked on designing and implementing scalable backend and mobile solutions to streamline
+                                logistics workflows and enhance customer engagement during my internship at Dhobi G.</p>
                             <div class="timeline-details">
                                 <ul class="responsibility-list">
-                                    <li><i class='bx bx-check-circle'></i> Contributing to software development projects and technical solutions</li>
-                                    <li><i class='bx bx-check-circle'></i> Collaborating with team members to implement innovative features</li>
-                                    <li><i class='bx bx-check-circle'></i> Applying problem-solving skills to optimize existing systems</li>
-                                    <li><i class='bx bx-check-circle'></i> Learning and implementing industry best practices in a professional environment</li>
+                                    <li><i class='bx bx-check-circle'></i> Built a push notification system using Django
+                                        and FCM for faster logistics communication.</li>
+                                    <li><i class='bx bx-check-circle'></i> Created and tested a mobile app with Expo and
+                                        React Native to validate notification delivery.</li>
+                                    <li><i class='bx bx-check-circle'></i> Implemented a chatbot that automated user
+                                        support and reduced manual customer service workload.</li>
+                                    <li><i class='bx bx-check-circle'></i> Designed scalable backend solutions ensuring
+                                        reliability, performance, and business alignment.</li>
+                                    <li><i class='bx bx-check-circle'></i> Worked with cross-functional teams to gather
+                                        requirements and deliver optimized technical outcomes.</li>
+                                    <li><i class='bx bx-check-circle'></i> Improved system efficiency by integrating
+                                        real-time features into the logistics workflow.</li>
                                 </ul>
                             </div>
                             <div class="timeline-skills">
-                                <span class="skill-tag">Software Development</span>
-                                <span class="skill-tag">Problem Solving</span>
-                                <span class="skill-tag">Teamwork</span>
-                                <span class="skill-tag">Technical Skills</span>
+                                <span class="skill-tag">Django</span>
+                                <span class="skill-tag">Firebase Cloud Messaging (FCM)</span>
+                                <span class="skill-tag">React Native</span>
+                                <span class="skill-tag">Expo</span>
+                                <span class="skill-tag">Chatbot Development</span>
+                                <span class="skill-tag">Backend Development</span>
+                                <span class="skill-tag">Collaboration</span>
                             </div>
                         </div>
                     </div>
                 </div>
-
 
 
                 <!-- Technical Head at Codezilla -->
@@ -497,13 +521,18 @@
                             </div>
                         </div>
                         <div class="timeline-body">
-                            <p>As the Technical Head of our club, I am committed to supporting our members with all their technical queries and ensuring their growth through various initiatives.</p>
+                            <p>As the Technical Head of our club, I am committed to supporting our members with all
+                                their technical queries and ensuring their growth through various initiatives.</p>
                             <div class="timeline-details">
                                 <ul class="responsibility-list">
-                                    <li><i class='bx bx-check-circle'></i> Actively assist with resolving technical doubts for club members</li>
-                                    <li><i class='bx bx-check-circle'></i> Organize in-club events designed to enhance technical skills</li>
-                                    <li><i class='bx bx-check-circle'></i> Foster collaboration and promote continuous development within the club</li>
-                                    <li><i class='bx bx-check-circle'></i> Create an environment where every member can thrive and achieve their full potential</li>
+                                    <li><i class='bx bx-check-circle'></i> Actively assist with resolving technical
+                                        doubts for club members</li>
+                                    <li><i class='bx bx-check-circle'></i> Organize in-club events designed to enhance
+                                        technical skills</li>
+                                    <li><i class='bx bx-check-circle'></i> Foster collaboration and promote continuous
+                                        development within the club</li>
+                                    <li><i class='bx bx-check-circle'></i> Create an environment where every member can
+                                        thrive and achieve their full potential</li>
                                 </ul>
                             </div>
                             <div class="timeline-skills">
@@ -538,12 +567,16 @@
                             </div>
                         </div>
                         <div class="timeline-body">
-                            <p>As a Design Team member in our club, I contributed to enhancing our social media engagement through creative design work.</p>
+                            <p>As a Design Team member in our club, I contributed to enhancing our social media
+                                engagement through creative design work.</p>
                             <div class="timeline-details">
                                 <ul class="responsibility-list">
-                                    <li><i class='bx bx-check-circle'></i> Created several Figma designs to enhance our social media engagement</li>
-                                    <li><i class='bx bx-check-circle'></i> Organized events within the club to promote member participation and growth</li>
-                                    <li><i class='bx bx-check-circle'></i> Designed promotional posters for club events to ensure effective communication and outreach</li>
+                                    <li><i class='bx bx-check-circle'></i> Created several Figma designs to enhance our
+                                        social media engagement</li>
+                                    <li><i class='bx bx-check-circle'></i> Organized events within the club to promote
+                                        member participation and growth</li>
+                                    <li><i class='bx bx-check-circle'></i> Designed promotional posters for club events
+                                        to ensure effective communication and outreach</li>
                                 </ul>
                             </div>
                             <div class="timeline-skills">
@@ -567,7 +600,8 @@
                             <div class="timeline-header-content">
                                 <h3 class="timeline-title">Design Team Member</h3>
                                 <div class="timeline-company">
-                                    <a href="https://www.linkedin.com/in/dsc-srm-ramapuram/" target="_blank" class="company-link">
+                                    <a href="https://www.linkedin.com/in/dsc-srm-ramapuram/" target="_blank"
+                                        class="company-link">
                                         GDSC SRMIST Ramapuram Campus
                                         <i class='bx bx-link-external'></i>
                                     </a>
@@ -578,14 +612,20 @@
                             </div>
                         </div>
                         <div class="timeline-body">
-                            <p>As a member of my club, I gained extensive experience in UI/UX design and foundational knowledge in machine learning concepts through networking with fellow members.</p>
+                            <p>As a member of my club, I gained extensive experience in UI/UX design and foundational
+                                knowledge in machine learning concepts through networking with fellow members.</p>
                             <div class="timeline-details">
                                 <ul class="responsibility-list">
-                                    <li><i class='bx bx-check-circle'></i> Gained extensive experience in UI/UX design using Figma</li>
-                                    <li><i class='bx bx-check-circle'></i> Acquired foundational knowledge in machine learning concepts through networking with club members</li>
-                                    <li><i class='bx bx-check-circle'></i> Contributed design concepts for the creation of our club's website</li>
-                                    <li><i class='bx bx-check-circle'></i> Designed posters for the club's social media showcases</li>
-                                    <li><i class='bx bx-check-circle'></i> Conducted sessions on machine learning and computer science fundamentals</li>
+                                    <li><i class='bx bx-check-circle'></i> Gained extensive experience in UI/UX design
+                                        using Figma</li>
+                                    <li><i class='bx bx-check-circle'></i> Acquired foundational knowledge in machine
+                                        learning concepts through networking with club members</li>
+                                    <li><i class='bx bx-check-circle'></i> Contributed design concepts for the creation
+                                        of our club's website</li>
+                                    <li><i class='bx bx-check-circle'></i> Designed posters for the club's social media
+                                        showcases</li>
+                                    <li><i class='bx bx-check-circle'></i> Conducted sessions on machine learning and
+                                        computer science fundamentals</li>
                                 </ul>
                             </div>
                             <div class="timeline-skills">
@@ -609,7 +649,7 @@
                 margin: 2rem auto;
                 padding: 0 20px;
             }
-            
+
             /* The central line */
             .experience-timeline::before {
                 content: '';
@@ -621,7 +661,7 @@
                 transform: translateX(-50%);
                 border-radius: 10px;
             }
-            
+
             /* Timeline Items */
             .timeline-item {
                 position: relative;
@@ -630,7 +670,7 @@
                 display: flex;
                 justify-content: center;
             }
-            
+
             /* The dots on the timeline */
             .timeline-dot {
                 position: absolute;
@@ -645,13 +685,13 @@
                 z-index: 2;
                 transition: all 0.3s ease;
             }
-            
+
             .timeline-item:hover .timeline-dot {
                 background-color: #fff;
                 box-shadow: 0 0 0 5px var(--first-color), 0 0 15px rgba(28, 131, 225, 0.6);
                 transform: translateX(-50%) scale(1.2);
             }
-            
+
             /* The date box */
             .timeline-date {
                 position: absolute;
@@ -661,7 +701,7 @@
                 text-align: right;
                 padding-right: 30px;
             }
-            
+
             .timeline-date span {
                 display: inline-block;
                 background-color: rgba(28, 131, 225, 0.1);
@@ -673,14 +713,14 @@
                 transition: all 0.3s ease;
                 box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
             }
-            
+
             .timeline-item:hover .timeline-date span {
                 background-color: var(--first-color);
                 color: white;
                 transform: translateY(-3px);
                 box-shadow: 0 6px 15px rgba(28, 131, 225, 0.3);
             }
-            
+
             /* The content box */
             .timeline-content {
                 width: calc(50% - 40px);
@@ -693,7 +733,7 @@
                 transition: all 0.3s ease;
                 border-left: 4px solid var(--first-color);
             }
-            
+
             .timeline-content::before {
                 content: '';
                 position: absolute;
@@ -707,12 +747,12 @@
                 border-bottom: 4px solid var(--first-color);
                 border-radius: 0 0 0 5px;
             }
-            
+
             .timeline-item:hover .timeline-content {
                 transform: translateY(-5px);
                 box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
             }
-            
+
             /* Content Header */
             .timeline-header {
                 margin-bottom: 15px;
@@ -720,11 +760,11 @@
                 justify-content: space-between;
                 align-items: flex-start;
             }
-            
+
             .timeline-header-content {
                 flex: 1;
             }
-            
+
             .company-logo {
                 width: 90px;
                 height: 90px;
@@ -737,7 +777,7 @@
                 padding: 8px;
                 transition: all 0.3s ease;
             }
-            
+
             .company-logo img {
                 max-width: 100%;
                 max-height: 100%;
@@ -745,17 +785,17 @@
                 filter: grayscale(50%);
                 transition: all 0.3s ease;
             }
-            
+
             .timeline-item:hover .company-logo {
                 background-color: rgba(255, 255, 255, 0.1);
                 transform: translateY(-3px);
                 box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             }
-            
+
             .timeline-item:hover .company-logo img {
                 filter: grayscale(0%);
             }
-            
+
             .timeline-title {
                 font-size: 1.3rem;
                 color: #fff;
@@ -763,15 +803,15 @@
                 font-weight: 600;
                 transition: all 0.3s ease;
             }
-            
+
             .timeline-item:hover .timeline-title {
                 color: var(--first-color);
             }
-            
+
             .timeline-company {
                 margin-bottom: 10px;
             }
-            
+
             .company-link {
                 display: inline-flex;
                 align-items: center;
@@ -781,23 +821,23 @@
                 transition: all 0.3s ease;
                 gap: 5px;
             }
-            
+
             .company-link i {
                 font-size: 1rem;
                 transition: transform 0.3s ease;
                 opacity: 0;
                 transform: translateX(-5px);
             }
-            
+
             .company-link:hover {
                 color: var(--first-color);
             }
-            
+
             .company-link:hover i {
                 opacity: 1;
                 transform: translateX(0);
             }
-            
+
             /* Content Body */
             .timeline-body p {
                 color: #d1d1d1;
@@ -806,24 +846,24 @@
                 margin-bottom: 15px;
                 text-align: justify;
             }
-            
+
             .timeline-details {
                 margin-bottom: 15px;
             }
-            
+
             .details-title {
                 font-size: 1rem;
                 color: #fff;
                 margin-bottom: 8px;
                 font-weight: 500;
             }
-            
+
             .responsibility-list {
                 list-style: none;
                 padding: 0;
                 margin: 0;
             }
-            
+
             .responsibility-list li {
                 margin-bottom: 8px;
                 display: flex;
@@ -833,7 +873,7 @@
                 font-size: 0.9rem;
                 text-align: justify;
             }
-            
+
             .responsibility-list li i {
                 color: var(--first-color);
                 margin-right: 10px;
@@ -842,18 +882,18 @@
                 margin-top: 2px;
                 transition: transform 0.3s ease;
             }
-            
+
             .timeline-item:hover .responsibility-list li i {
                 transform: scale(1.2);
             }
-            
+
             /* Skills Tags */
             .timeline-skills {
                 display: flex;
                 flex-wrap: wrap;
                 gap: 8px;
             }
-            
+
             .skill-tag {
                 background-color: rgba(255, 255, 255, 0.08);
                 color: #d1d1d1;
@@ -863,23 +903,23 @@
                 font-weight: 500;
                 transition: all 0.3s ease;
             }
-            
+
             .timeline-item:hover .skill-tag {
                 background-color: rgba(28, 131, 225, 0.15);
                 color: var(--first-color);
                 transform: translateY(-2px);
             }
-            
+
             /* Responsive Design */
             @media screen and (max-width: 991px) {
                 .experience-timeline::before {
                     left: 30px;
                 }
-                
+
                 .timeline-dot {
                     left: 30px;
                 }
-                
+
                 .timeline-date {
                     position: relative;
                     width: 100%;
@@ -889,12 +929,12 @@
                     padding-right: 0;
                     margin-bottom: 10px;
                 }
-                
+
                 .timeline-content {
                     width: calc(100% - 70px);
                     margin-left: 70px;
                 }
-                
+
                 .timeline-content::before {
                     left: -10px;
                 }
@@ -905,28 +945,28 @@
                     margin-left: 10px;
                 }
             }
-            
+
             @media screen and (max-width: 576px) {
                 .timeline-content {
                     padding: 15px;
                 }
-                
+
                 .timeline-title {
                     font-size: 1.1rem;
                 }
-                
+
                 .company-link {
                     font-size: 0.85rem;
                 }
-                
+
                 .timeline-body p {
                     font-size: 0.9rem;
                 }
-                
+
                 .responsibility-list li {
                     font-size: 0.85rem;
                 }
-                
+
                 .skill-tag {
                     font-size: 0.75rem;
                     padding: 4px 8px;
@@ -947,7 +987,7 @@
 
         <!-- Add animation for timeline on scroll -->
         <script>
-            document.addEventListener('DOMContentLoaded', function() {
+            document.addEventListener('DOMContentLoaded', function () {
                 // Animation for timeline items on scroll
                 const observer = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
@@ -959,7 +999,7 @@
                 }, {
                     threshold: 0.2
                 });
-                
+
                 // Observe all timeline items
                 document.querySelectorAll('.timeline-item').forEach(item => {
                     observer.observe(item);
@@ -978,7 +1018,7 @@
                 }, {
                     threshold: 0.2
                 });
-                
+
                 // Observe all achievement cards
                 document.querySelectorAll('.achievement-card').forEach((card, index) => {
                     achievementObserver.observe(card);
@@ -997,56 +1037,58 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
-            
+
             .animate-timeline-item {
                 animation: fadeInUp 0.8s forwards;
             }
-            
+
             /* Achievement card animations */
             .achievement-card-hidden {
                 opacity: 0;
                 transform: translateY(50px) scale(0.9);
             }
-            
+
             .animate-achievement-card {
                 animation: fadeInUpScale 0.8s forwards;
             }
-            
+
             @keyframes fadeInUp {
                 from {
                     opacity: 0;
                     transform: translateY(30px);
                 }
+
                 to {
                     opacity: 1;
                     transform: translateY(0);
                 }
             }
-            
+
             @keyframes fadeInUpScale {
                 from {
                     opacity: 0;
                     transform: translateY(50px) scale(0.9);
                 }
+
                 to {
                     opacity: 1;
                     transform: translateY(0) scale(1);
                 }
             }
-            
+
             /* Staggered animation delay for items */
             .timeline-item:nth-child(1) {
                 animation-delay: 0.1s;
             }
-            
+
             .timeline-item:nth-child(2) {
                 animation-delay: 0.3s;
             }
-            
+
             .timeline-item:nth-child(3) {
                 animation-delay: 0.5s;
             }
-            
+
             .timeline-item:nth-child(4) {
                 animation-delay: 0.7s;
             }
@@ -1111,7 +1153,7 @@
                     justify-content: center;
                     margin-bottom: 15px;
                 }
-                
+
                 .codechef-custom-card {
                     background: linear-gradient(145deg, #242526, #2c2d2e);
                     border-radius: 15px;
@@ -1122,12 +1164,12 @@
                     border-left: 4px solid var(--first-color);
                     transition: all 0.3s ease;
                 }
-                
+
                 .codechef-custom-card:hover {
                     transform: translateY(-5px);
                     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
                 }
-                
+
                 .codechef-header {
                     display: flex;
                     align-items: center;
@@ -1135,25 +1177,25 @@
                     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
                     padding-bottom: 15px;
                 }
-                
+
                 .codechef-logo {
                     width: 50px;
                     height: 50px;
                     margin-right: 15px;
                     border-radius: 8px;
                 }
-                
+
                 .codechef-header h3 {
                     color: #fff;
                     font-size: 1.3rem;
                     margin: 0;
                     font-weight: 600;
                 }
-                
+
                 .codechef-content {
                     text-align: center;
                 }
-                
+
                 .codechef-username {
                     font-size: 1.1rem;
                     color: var(--first-color);
@@ -1161,53 +1203,54 @@
                     font-weight: 600;
                     letter-spacing: 1px;
                 }
-                
+
                 .codechef-rating-container {
                     display: flex;
                     justify-content: space-around;
                     margin-bottom: 25px;
                 }
-                
+
                 .codechef-metric {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                 }
-                
+
                 .metric-label {
                     font-size: 0.9rem;
                     color: #a0a0a0;
                     margin-bottom: 5px;
                 }
-                
+
                 .metric-value {
                     font-size: 1.5rem;
                     color: #fff;
                     font-weight: 700;
                 }
-                
+
                 .codechef-stars {
                     font-size: 2rem;
-                    color: #FFD700; /* Gold color for stars */
+                    color: #FFD700;
+                    /* Gold color for stars */
                     letter-spacing: 5px;
                     margin-top: 10px;
                 }
-                
+
                 /* Responsive adjustments */
                 @media (max-width: 600px) {
                     .codechef-custom-card {
                         padding: 20px 15px;
                     }
-                    
+
                     .codechef-header h3 {
                         font-size: 1.1rem;
                     }
-                    
+
                     .codechef-rating-container {
                         flex-direction: column;
                         gap: 15px;
                     }
-                    
+
                     .metric-value {
                         font-size: 1.3rem;
                     }
@@ -1236,14 +1279,15 @@
         <!-- CODING ACHIEVEMENTS SECTION -->
         <section class="achievements section" id="achievements">
             <h2 class="section-title">Coding Achievements & Recognition</h2>
-            
+
             <div class="achievements__container">
                 <div class="achievements-grid">
-                    
+
                     <!-- Achievement Badge 1 - 100 Days 2025 -->
                     <div class="achievement-card">
                         <div class="achievement-badge">
-                            <img src="assets/img/leetcode-badges/100-days-badge-2025.png" alt="100 Days of Badge 2025" class="badge-image">
+                            <img src="assets/img/leetcode-badges/100-days-badge-2025.png" alt="100 Days of Badge 2025"
+                                class="badge-image">
                         </div>
                         <div class="achievement-content">
                             <h3 class="achievement-title">100 Days of Badge 2025</h3>
@@ -1263,7 +1307,8 @@
                     <!-- Achievement Badge 2 - 50 Days 2025 -->
                     <div class="achievement-card">
                         <div class="achievement-badge">
-                            <img src="assets/img/leetcode-badges/50-days-badge-2025.png" alt="50 Days of Badge 2025" class="badge-image">
+                            <img src="assets/img/leetcode-badges/50-days-badge-2025.png" alt="50 Days of Badge 2025"
+                                class="badge-image">
                         </div>
                         <div class="achievement-content">
                             <h3 class="achievement-title">50 Days of Badge 2025</h3>
@@ -1283,7 +1328,8 @@
                     <!-- Achievement Badge 3 - 100 Days 2024 -->
                     <div class="achievement-card">
                         <div class="achievement-badge">
-                            <img src="assets/img/leetcode-badges/100-days-badge-2024.png" alt="100 Days of Badge 2024" class="badge-image">
+                            <img src="assets/img/leetcode-badges/100-days-badge-2024.png" alt="100 Days of Badge 2024"
+                                class="badge-image">
                         </div>
                         <div class="achievement-content">
                             <h3 class="achievement-title">100 Days of Badge 2024</h3>
@@ -1303,7 +1349,8 @@
                     <!-- Achievement Badge 4 - 50 Days 2024 -->
                     <div class="achievement-card">
                         <div class="achievement-badge">
-                            <img src="assets/img/leetcode-badges/50-days-badge-2024.png" alt="50 Days of Badge 2024" class="badge-image">
+                            <img src="assets/img/leetcode-badges/50-days-badge-2024.png" alt="50 Days of Badge 2024"
+                                class="badge-image">
                         </div>
                         <div class="achievement-content">
                             <h3 class="achievement-title">50 Days of Badge 2024</h3>
@@ -1323,7 +1370,8 @@
                     <!-- Achievement Badge 5 - Feb LeetCoding Challenge 2025 -->
                     <div class="achievement-card">
                         <div class="achievement-badge">
-                            <img src="assets/img/leetcode-badges/feb-leetcoding-challenge-2025.png" alt="February LeetCoding Challenge 2025" class="badge-image">
+                            <img src="assets/img/leetcode-badges/feb-leetcoding-challenge-2025.png"
+                                alt="February LeetCoding Challenge 2025" class="badge-image">
                         </div>
                         <div class="achievement-content">
                             <h3 class="achievement-title">February LeetCoding Challenge 2025</h3>
@@ -1343,7 +1391,8 @@
                     <!-- Achievement Badge 6 - Jan LeetCoding Challenge 2025 -->
                     <div class="achievement-card">
                         <div class="achievement-badge">
-                            <img src="assets/img/leetcode-badges/jan-leetcoding-challenge-2025.png" alt="January LeetCoding Challenge 2025" class="badge-image">
+                            <img src="assets/img/leetcode-badges/jan-leetcoding-challenge-2025.png"
+                                alt="January LeetCoding Challenge 2025" class="badge-image">
                         </div>
                         <div class="achievement-content">
                             <h3 class="achievement-title">January LeetCoding Challenge 2025</h3>
@@ -1363,7 +1412,8 @@
                     <!-- Achievement Badge 7 - Dec LeetCoding Challenge 2024 -->
                     <div class="achievement-card">
                         <div class="achievement-badge">
-                            <img src="assets/img/leetcode-badges/dec-leetcoding-challenge-2024.png" alt="December LeetCoding Challenge 2024" class="badge-image">
+                            <img src="assets/img/leetcode-badges/dec-leetcoding-challenge-2024.png"
+                                alt="December LeetCoding Challenge 2024" class="badge-image">
                         </div>
                         <div class="achievement-content">
                             <h3 class="achievement-title">December LeetCoding Challenge 2024</h3>
@@ -1383,7 +1433,8 @@
                     <!-- Achievement Badge 8 - Nov LeetCoding Challenge 2024 -->
                     <div class="achievement-card">
                         <div class="achievement-badge">
-                            <img src="assets/img/leetcode-badges/nov-leetcoding-challenge-2024.png" alt="November LeetCoding Challenge 2024" class="badge-image">
+                            <img src="assets/img/leetcode-badges/nov-leetcoding-challenge-2024.png"
+                                alt="November LeetCoding Challenge 2024" class="badge-image">
                         </div>
                         <div class="achievement-content">
                             <h3 class="achievement-title">November LeetCoding Challenge 2024</h3>
@@ -1403,7 +1454,8 @@
                     <!-- Achievement Badge 9 - Oct LeetCoding Challenge 2024 -->
                     <div class="achievement-card">
                         <div class="achievement-badge">
-                            <img src="assets/img/leetcode-badges/oct-leetcoding-challenge-2024.png" alt="October LeetCoding Challenge 2024" class="badge-image">
+                            <img src="assets/img/leetcode-badges/oct-leetcoding-challenge-2024.png"
+                                alt="October LeetCoding Challenge 2024" class="badge-image">
                         </div>
                         <div class="achievement-content">
                             <h3 class="achievement-title">October LeetCoding Challenge 2024</h3>
@@ -1419,7 +1471,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </section>
@@ -1432,7 +1484,7 @@
                 margin: 2rem auto;
                 padding: 0 20px;
             }
-            
+
             .achievements-grid {
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1440,7 +1492,7 @@
                 margin-top: 2rem;
                 justify-items: center;
             }
-            
+
             /* Ensure exactly 3 columns on larger screens */
             @media screen and (min-width: 1024px) {
                 .achievements-grid {
@@ -1450,7 +1502,7 @@
                     margin-right: auto;
                 }
             }
-            
+
             /* 2 columns on tablets */
             @media screen and (max-width: 1023px) and (min-width: 768px) {
                 .achievements-grid {
@@ -1460,7 +1512,7 @@
                     margin-right: auto;
                 }
             }
-            
+
             /* 1 column on mobile */
             @media screen and (max-width: 767px) {
                 .achievements-grid {
@@ -1470,7 +1522,7 @@
                     margin-right: auto;
                 }
             }
-            
+
             /* Achievement Card */
             .achievement-card {
                 background: linear-gradient(145deg, #242526, #2c2d2e);
@@ -1490,7 +1542,7 @@
                 flex-direction: column;
                 justify-content: space-between;
             }
-            
+
             .achievement-card::before {
                 content: '';
                 position: absolute;
@@ -1503,17 +1555,17 @@
                 transition: opacity 0.4s ease;
                 border-radius: 20px;
             }
-            
+
             .achievement-card:hover::before {
                 opacity: 1;
             }
-            
+
             .achievement-card:hover {
                 transform: translateY(-10px) scale(1.02);
                 box-shadow: 0 20px 40px rgba(28, 131, 225, 0.2);
                 border-color: rgba(28, 131, 225, 0.3);
             }
-            
+
             /* Badge Image Container */
             .achievement-badge {
                 width: 120px;
@@ -1528,13 +1580,13 @@
                 padding: 15px;
                 transition: all 0.4s ease;
             }
-            
+
             .achievement-card:hover .achievement-badge {
                 transform: scale(1.1) rotate(5deg);
                 background: linear-gradient(135deg, rgba(28, 131, 225, 0.2), rgba(28, 131, 225, 0.1));
                 box-shadow: 0 10px 25px rgba(28, 131, 225, 0.3);
             }
-            
+
             .badge-image {
                 width: 90px;
                 height: 90px;
@@ -1542,17 +1594,17 @@
                 filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
                 transition: all 0.4s ease;
             }
-            
+
             .achievement-card:hover .badge-image {
                 filter: drop-shadow(0 8px 20px rgba(28, 131, 225, 0.4));
             }
-            
+
             /* Achievement Content */
             .achievement-content {
                 position: relative;
                 z-index: 2;
             }
-            
+
             .achievement-title {
                 font-size: 1.4rem;
                 color: #fff;
@@ -1561,12 +1613,12 @@
                 transition: all 0.3s ease;
                 text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
             }
-            
+
             .achievement-card:hover .achievement-title {
                 color: var(--first-color);
                 text-shadow: 0 2px 8px rgba(28, 131, 225, 0.4);
             }
-            
+
             .achievement-date,
             .achievement-platform {
                 display: flex;
@@ -1579,7 +1631,7 @@
                 font-weight: 500;
                 transition: all 0.3s ease;
             }
-            
+
             .platform-link {
                 color: inherit;
                 text-decoration: none;
@@ -1588,31 +1640,31 @@
                 padding: 3px 8px;
                 display: inline-block;
             }
-            
+
             .platform-link:hover {
                 color: var(--first-color);
                 background-color: rgba(28, 131, 225, 0.1);
                 transform: translateY(-1px);
             }
-            
+
             .achievement-date i,
             .achievement-platform i {
                 font-size: 1.1rem;
                 color: var(--first-color);
                 transition: all 0.3s ease;
             }
-            
+
             .achievement-card:hover .achievement-date,
             .achievement-card:hover .achievement-platform {
                 color: #e0e0e0;
             }
-            
+
             .achievement-card:hover .achievement-date i,
             .achievement-card:hover .achievement-platform i {
                 transform: scale(1.2);
                 color: #fff;
             }
-            
+
             /* Achievement Badge Glow Effect */
             .achievement-badge::after {
                 content: '';
@@ -1621,85 +1673,89 @@
                 left: -2px;
                 right: -2px;
                 bottom: -2px;
-                background: linear-gradient(45deg, 
-                    var(--first-color), 
-                    transparent, 
-                    var(--first-color), 
-                    transparent, 
-                    var(--first-color)
-                );
+                background: linear-gradient(45deg,
+                        var(--first-color),
+                        transparent,
+                        var(--first-color),
+                        transparent,
+                        var(--first-color));
                 border-radius: 50%;
                 opacity: 0;
                 transition: opacity 0.4s ease;
                 z-index: -1;
                 animation: rotate 3s linear infinite;
             }
-            
+
             .achievement-card:hover .achievement-badge::after {
                 opacity: 0.6;
             }
-            
+
             @keyframes rotate {
-                0% { transform: rotate(0deg); }
-                100% { transform: rotate(360deg); }
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                100% {
+                    transform: rotate(360deg);
+                }
             }
-            
+
             /* Responsive Design */
             @media screen and (max-width: 768px) {
                 .achievements-grid {
                     grid-template-columns: 1fr;
                     gap: 20px;
                 }
-                
+
                 .achievement-card {
                     padding: 25px 20px;
                 }
-                
+
                 .achievement-badge {
                     width: 100px;
                     height: 100px;
                     margin-bottom: 20px;
                 }
-                
+
                 .badge-image {
                     width: 75px;
                     height: 75px;
                 }
-                
+
                 .achievement-title {
                     font-size: 1.2rem;
                 }
-                
+
                 .achievement-date,
                 .achievement-platform {
                     font-size: 0.9rem;
                 }
             }
-            
+
             @media screen and (max-width: 480px) {
                 .achievements__container {
                     padding: 0 15px;
                 }
-                
+
                 .achievement-card {
                     padding: 20px 15px;
                 }
-                
+
                 .achievement-badge {
                     width: 80px;
                     height: 80px;
                 }
-                
+
                 .badge-image {
                     width: 60px;
                     height: 60px;
                 }
-                
+
                 .achievement-title {
                     font-size: 1.1rem;
                     margin-bottom: 15px;
                 }
-                
+
                 .achievement-date,
                 .achievement-platform {
                     font-size: 0.85rem;
@@ -1726,7 +1782,7 @@
             <a href="https://medium.com/@sa_hilll94" target="_blank">
                 <h3 id="blogss" style="text-align: center; margin-top: 2rem;">Click Here to Explore More Articles</h3>
             </a>
-            
+
             <script>
                 document.addEventListener('DOMContentLoaded', function () {
                     const blogContainer = document.getElementById('blog-container');
@@ -1738,7 +1794,7 @@
 
                     // Show loading indicator
                     loadingIndicator.style.display = 'flex';
-                    
+
                     // Fetch articles from Medium
                     fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F%40sa_hilll94')
                         .then(response => response.json())
@@ -1746,15 +1802,15 @@
                             articles = data.items;
                             // Hide loading indicator
                             loadingIndicator.style.display = 'none';
-                            
+
                             if (articles.length === 0) {
                                 blogContainer.innerHTML = '<div class="no-articles">No articles found</div>';
                                 loadMoreButton.style.display = 'none';
                                 return;
                             }
-                            
+
                             loadArticles();
-                            
+
                             // Show/hide load more button based on available articles
                             if (currentIndex >= articles.length) {
                                 loadMoreButton.style.display = 'none';
@@ -1782,7 +1838,7 @@
                                 month: 'short',
                                 day: 'numeric'
                             });
-                            
+
                             // Extract the first image from the content if available
                             let imageUrl = '';
                             const imgRegex = /<img.*?src="(.*?)".*?>/;
@@ -1790,7 +1846,7 @@
                             if (imgMatch && imgMatch.length > 1) {
                                 imageUrl = imgMatch[1];
                             }
-                            
+
                             // Get a clean description by removing HTML tags
                             let description = item.content.replace(/<[^>]*>/g, '');
                             description = description.substring(0, 150) + '...';
@@ -1798,7 +1854,7 @@
                             html += `
                             <div class="article-card">
                                 <div class="article-image-container">
-                                    ${imageUrl ? `<img src="${imageUrl}" alt="${title}" class="article-image">` : 
+                                    ${imageUrl ? `<img src="${imageUrl}" alt="${title}" class="article-image">` :
                                     `<div class="article-no-image">
                                         <i class='bx bxs-file-doc'></i>
                                      </div>`}
@@ -1860,7 +1916,8 @@
             }
 
             .article-image-container {
-                height: 150px; /* Reduced height */
+                height: 150px;
+                /* Reduced height */
                 overflow: hidden;
             }
 
@@ -1952,7 +2009,7 @@
                 .articles-grid {
                     justify-content: center;
                 }
-                
+
                 .article-card {
                     width: 250px;
                 }
@@ -1962,7 +2019,7 @@
                 .articles-grid {
                     justify-content: center;
                 }
-                
+
                 .article-card {
                     width: 220px;
                 }
@@ -1985,7 +2042,7 @@
         <section class="project section" id="projects">
             <div class="container">
                 <h2 class="section-title">Projects</h2>
-                
+
                 <!-- Filter navigation for projects -->
                 <div class="project-filter">
                     <button class="filter-btn active" data-filter="all">All</button>
@@ -1994,95 +2051,18 @@
                     <button class="filter-btn" data-filter="python">Python</button>
                     <button class="filter-btn" data-filter="cli">CLI</button>
                 </div>
-                
-                <div class="projects__container">
-                    <!-- ChatWithAI Project -->
-                    <div class="project__card" data-category="web react">
-                        <div class="project__image-container">
-                            <img class="project__image" src="assets/img/GeminiProject.jpg"
-                                alt="ChatWithAI Project Preview" loading="lazy">
-                            <div class="project__overlay">
-                                <a href="https://chatwithai.sahilfolio.live/" target="_blank" class="project__overlay-btn">
-                                    View Live <i class='bx bx-link-external'></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="project__content">
-                            <div class="project__header">
-                                <h3 class="project__title">ChatWithAI</h3>
-                                <div class="project__type">Web App</div>
-                            </div>
-                            <div class="project__description">
-                                <p><b>ChatWithAI</b> integrates the Gemini API for dynamic, AI-driven chat responses with advanced NLP for accurate, contextual interactions. Features secure API key management and real-time AI capabilities.</p>
-                            </div>
-                            <div class="project__tags-container">
-                                <div class="project__tags">
-                                    <span class="project__tag">React.js</span>
-                                    <span class="project__tag">Node.js</span>
-                                    <span class="project__tag">Gemini API</span>
-                                    <span class="project__tag">Vercel</span>
-                                </div>
-                            </div>
-                            <div class="project__links">
-                                <a href="https://github.com/Sahilll94/ChatWithAI" class="project__link" target="_blank" aria-label="GitHub Repository">
-                                    <i class='bx bxl-github'></i>
-                                    <span>Repository</span>
-                                </a>
-                                <a href="https://chatwithai.sahilfolio.live/" class="project__link" target="_blank" aria-label="Live Demo">
-                                    <i class='bx bx-globe'></i>
-                                    <span>Live Demo</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Sorting Algorithm Visualization Project -->
-                    <div class="project__card" data-category="web">
-                        <div class="project__image-container">
-                            <img class="project__image" src="assets/img/HeapSortProjects.png"
-                                alt="Heap and Sort Project Preview" loading="lazy">
-                            <div class="project__overlay">
-                                <a href="https://sahilll94.github.io/Quick-and-Heap-Sort-Web-App/" target="_blank" class="project__overlay-btn">
-                                    View Live <i class='bx bx-link-external'></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="project__content">
-                            <div class="project__header">
-                                <h3 class="project__title">Sorting Algorithm Visualization</h3>
-                                <div class="project__type interactive-tool">Interactive Tool</div>
-                            </div>
-                            <div class="project__description">
-                                <p><b>Sorting Visualizer</b> showcases Quick Sort and Heap Sort algorithms through engaging, real-time visualizations, demonstrating key concepts like partitioning and heapifying.</p>
-                            </div>
-                            <div class="project__tags-container">
-                                <div class="project__tags">
-                                    <span class="project__tag">HTML</span>
-                                    <span class="project__tag">CSS</span>
-                                    <span class="project__tag">JavaScript</span>
-                                    <span class="project__tag">Algorithms</span>
-                                </div>
-                            </div>
-                            <div class="project__links">
-                                <a href="https://github.com/Sahilll94/Quick-and-Heap-Sort-Web-App" class="project__link" target="_blank" aria-label="GitHub Repository">
-                                    <i class='bx bxl-github'></i>
-                                    <span>Repository</span>
-                                </a>
-                                <a href="https://sahilll94.github.io/Quick-and-Heap-Sort-Web-App/" class="project__link" target="_blank" aria-label="Live Demo">
-                                    <i class='bx bx-globe'></i>
-                                    <span>Live Demo</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                <div class="projects__container">
 
                     <!-- Travel-Book Project -->
                     <div class="project__card" data-category="web mern">
                         <div class="project__image-container">
-                            <img class="project__image" src="https://cdn-images-1.medium.com/v2/resize:fit:1024/1*wAJWl9-aTMOjXuUh_SM2bw.png"
+                            <img class="project__image"
+                                src="https://cdn-images-1.medium.com/v2/resize:fit:1024/1*wAJWl9-aTMOjXuUh_SM2bw.png"
                                 alt="Travel-Book Preview" loading="lazy">
                             <div class="project__overlay">
-                                <a href="https://travelbook.sahilfolio.live/" target="_blank" class="project__overlay-btn">
+                                <a href="https://travelbook.sahilfolio.live/" target="_blank"
+                                    class="project__overlay-btn">
                                     View Live <i class='bx bx-link-external'></i>
                                 </a>
                             </div>
@@ -2093,7 +2073,9 @@
                                 <div class="project__type">Full Stack App</div>
                             </div>
                             <div class="project__description">
-                                <p><b>Travel-Book</b> is a MERN stack application for documenting travel experiences with secure authentication, memory management, and shareable links for sharing travel stories.</p>
+                                <p><b>Travel-Book</b> is a MERN stack application for documenting travel experiences
+                                    with secure authentication, memory management, and shareable links for sharing
+                                    travel stories.</p>
                             </div>
                             <div class="project__tags-container">
                                 <div class="project__tags">
@@ -2104,11 +2086,13 @@
                                 </div>
                             </div>
                             <div class="project__links">
-                                <a href="https://github.com/Sahilll94/Travel-Book" class="project__link" target="_blank" aria-label="GitHub Repository">
+                                <a href="https://github.com/Sahilll94/Travel-Book" class="project__link" target="_blank"
+                                    aria-label="GitHub Repository">
                                     <i class='bx bxl-github'></i>
                                     <span>Repository</span>
                                 </a>
-                                <a href="https://travelbook.sahilfolio.live/" class="project__link" target="_blank" aria-label="Live Demo">
+                                <a href="https://travelbook.sahilfolio.live/" class="project__link" target="_blank"
+                                    aria-label="Live Demo">
                                     <i class='bx bx-globe'></i>
                                     <span>Live Demo</span>
                                 </a>
@@ -2122,7 +2106,8 @@
                             <img class="project__image" src="assets/img/JobPortal.png"
                                 alt="Rajasthan Leap Project Preview" loading="lazy">
                             <div class="project__overlay">
-                                <a href="https://job-portal-frontend-ju4r.vercel.app/" target="_blank" class="project__overlay-btn">
+                                <a href="https://job-portal-frontend-ju4r.vercel.app/" target="_blank"
+                                    class="project__overlay-btn">
                                     View Live <i class='bx bx-link-external'></i>
                                 </a>
                             </div>
@@ -2133,7 +2118,9 @@
                                 <div class="project__type">Job Portal</div>
                             </div>
                             <div class="project__description">
-                                <p><b>Rajasthan Leap</b> is a job portal built for the Rajasthan government using the MERN stack and Redux, connecting job seekers and employers with efficient data management.</p>
+                                <p><b>Rajasthan Leap</b> is a job portal built for the Rajasthan government using the
+                                    MERN stack and Redux, connecting job seekers and employers with efficient data
+                                    management.</p>
                             </div>
                             <div class="project__tags-container">
                                 <div class="project__tags">
@@ -2144,11 +2131,13 @@
                                 </div>
                             </div>
                             <div class="project__links">
-                                <a href="https://github.com/Sahilll94/Job-Portal-Frontend" class="project__link" target="_blank" aria-label="GitHub Repository">
+                                <a href="https://github.com/Sahilll94/Job-Portal-Frontend" class="project__link"
+                                    target="_blank" aria-label="GitHub Repository">
                                     <i class='bx bxl-github'></i>
                                     <span>Repository</span>
                                 </a>
-                                <a href="https://job-portal-frontend-ju4r.vercel.app/" class="project__link" target="_blank" aria-label="Live Demo">
+                                <a href="https://job-portal-frontend-ju4r.vercel.app/" class="project__link"
+                                    target="_blank" aria-label="Live Demo">
                                     <i class='bx bx-globe'></i>
                                     <span>Live Demo</span>
                                 </a>
@@ -2156,49 +2145,154 @@
                         </div>
                     </div>
 
-                    <!-- Expense Tracker Project -->
-                    <div class="project__card" data-category="python">
+                    <!-- ChatWithAI Project -->
+                    <div class="project__card" data-category="web react">
                         <div class="project__image-container">
-                            <img class="project__image" src="assets/img/ExpenseTracker.png"
-                                alt="Expense Tracker Project Preview" loading="lazy">
+                            <img class="project__image" src="assets/img/GeminiProject.jpg"
+                                alt="ChatWithAI Project Preview" loading="lazy">
                             <div class="project__overlay">
-                                <a href="https://github.com/Sahilll94/Expense-Tracker" target="_blank" class="project__overlay-btn">
-                                    View Code <i class='bx bxl-github'></i>
+                                <a href="https://chatwithai.sahilfolio.live/" target="_blank"
+                                    class="project__overlay-btn">
+                                    View Live <i class='bx bx-link-external'></i>
                                 </a>
                             </div>
                         </div>
                         <div class="project__content">
                             <div class="project__header">
-                                <h3 class="project__title">Expense Tracker</h3>
-                                <div class="project__type">Desktop App</div>
+                                <h3 class="project__title">ChatWithAI</h3>
+                                <div class="project__type">Web App</div>
                             </div>
                             <div class="project__description">
-                                <p><b>Expense Tracker</b> helps users manage and visualize spending with a Python/Tkinter interface, generating pie charts with Matplotlib to represent expense distribution by category.</p>
+                                <p><b>ChatWithAI</b> integrates the Gemini API for dynamic, AI-driven chat responses
+                                    with advanced NLP for accurate, contextual interactions. Features secure API key
+                                    management and real-time AI capabilities.</p>
                             </div>
                             <div class="project__tags-container">
                                 <div class="project__tags">
-                                    <span class="project__tag">Python</span>
-                                    <span class="project__tag">Tkinter</span>
-                                    <span class="project__tag">Matplotlib</span>
-                                    <span class="project__tag">SQLite</span>
+                                    <span class="project__tag">React.js</span>
+                                    <span class="project__tag">Node.js</span>
+                                    <span class="project__tag">Gemini API</span>
+                                    <span class="project__tag">Vercel</span>
                                 </div>
                             </div>
                             <div class="project__links">
-                                <a href="https://github.com/Sahilll94/Expense-Tracker" class="project__link" target="_blank" aria-label="GitHub Repository">
+                                <a href="https://github.com/Sahilll94/ChatWithAI" class="project__link" target="_blank"
+                                    aria-label="GitHub Repository">
                                     <i class='bx bxl-github'></i>
                                     <span>Repository</span>
+                                </a>
+                                <a href="https://chatwithai.sahilfolio.live/" class="project__link" target="_blank"
+                                    aria-label="Live Demo">
+                                    <i class='bx bx-globe'></i>
+                                    <span>Live Demo</span>
                                 </a>
                             </div>
                         </div>
                     </div>
 
+                    <!-- Sorting Algorithm Visualization Project -->
+                    <div class="project__card" data-category="web">
+                        <div class="project__image-container">
+                            <img class="project__image" src="assets/img/HeapSortProjects.png"
+                                alt="Heap and Sort Project Preview" loading="lazy">
+                            <div class="project__overlay">
+                                <a href="https://sahilll94.github.io/Quick-and-Heap-Sort-Web-App/" target="_blank"
+                                    class="project__overlay-btn">
+                                    View Live <i class='bx bx-link-external'></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project__content">
+                            <div class="project__header">
+                                <h3 class="project__title">Sorting Algorithm Visualization</h3>
+                                <div class="project__type interactive-tool">Interactive Tool</div>
+                            </div>
+                            <div class="project__description">
+                                <p><b>Sorting Visualizer</b> showcases Quick Sort and Heap Sort algorithms through
+                                    engaging, real-time visualizations, demonstrating key concepts like partitioning and
+                                    heapifying.</p>
+                            </div>
+                            <div class="project__tags-container">
+                                <div class="project__tags">
+                                    <span class="project__tag">HTML</span>
+                                    <span class="project__tag">CSS</span>
+                                    <span class="project__tag">JavaScript</span>
+                                    <span class="project__tag">Algorithms</span>
+                                </div>
+                            </div>
+                            <div class="project__links">
+                                <a href="https://github.com/Sahilll94/Quick-and-Heap-Sort-Web-App" class="project__link"
+                                    target="_blank" aria-label="GitHub Repository">
+                                    <i class='bx bxl-github'></i>
+                                    <span>Repository</span>
+                                </a>
+                                <a href="https://sahilll94.github.io/Quick-and-Heap-Sort-Web-App/" class="project__link"
+                                    target="_blank" aria-label="Live Demo">
+                                    <i class='bx bx-globe'></i>
+                                    <span>Live Demo</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- WriteRight Project -->
+                    <div class="project__card" data-category="desktop electron">
+                        <div class="project__image-container">
+                            <img class="project__image" src="assets/img/writeright-interface.png"
+                                alt="WriteRight Preview" loading="lazy">
+                            <div class="project__overlay">
+                                <a href="https://github.com/Sahilll94/WriteRight/releases" target="_blank"
+                                    class="project__overlay-btn">
+                                    Download <i class='bx bx-link-external'></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project__content">
+                            <div class="project__header">
+                                <h3 class="project__title">WriteRight</h3>
+                                <div class="project__type">Cross-Platform Desktop App</div>
+                            </div>
+                            <div class="project__description">
+                                <p><b>WriteRight</b> is a desktop application built with <b>Electron.js</b> and
+                                    integrated
+                                    with <b>Gemini API</b> to assist users in writing grammatically correct and polished
+                                    text.
+                                    It provides AI-powered suggestions to eliminate errors and enhance clarity.
+                                    The app is packaged and distributed for <b>Windows, macOS, and Linux</b>
+                                    via automated GitHub Actions workflows and GitHub Releases.</p>
+                            </div>
+                            <div class="project__tags-container">
+                                <div class="project__tags">
+                                    <span class="project__tag">Electron.js</span>
+                                    <span class="project__tag">Node.js</span>
+                                    <span class="project__tag">Gemini API</span>
+                                    <span class="project__tag">GitHub Actions</span>
+                                </div>
+                            </div>
+                            <div class="project__links">
+                                <a href="https://github.com/Sahilll94/WriteRight" class="project__link" target="_blank"
+                                    aria-label="GitHub Repository">
+                                    <i class='bx bxl-github'></i>
+                                    <span>Repository</span>
+                                </a>
+                                <a href="https://github.com/Sahilll94/WriteRight/releases" class="project__link"
+                                    target="_blank" aria-label="Download Build">
+                                    <i class='bx bx-download'></i>
+                                    <span>Download</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
                     <!-- DevTrack Project -->
                     <div class="project__card" data-category="cli node">
                         <div class="project__image-container">
-                            <img class="project__image" src="assets/img/devtrack.png" 
-                                alt="DevTrack CLI Project Preview" loading="lazy">
+                            <img class="project__image" src="assets/img/devtrack.png" alt="DevTrack CLI Project Preview"
+                                loading="lazy">
                             <div class="project__overlay">
-                                <a href="https://www.npmjs.com/package/devtrack-cli" target="_blank" class="project__overlay-btn">
+                                <a href="https://www.npmjs.com/package/devtrack-cli" target="_blank"
+                                    class="project__overlay-btn">
                                     View NPM <i class='bx bx-package'></i>
                                 </a>
                             </div>
@@ -2209,7 +2303,9 @@
                                 <div class="project__type">CLI Tool</div>
                             </div>
                             <div class="project__description">
-                                <p><b>DevTrack</b> is a CLI-based task manager for developers, offering intuitive commands to add, list, complete, and remove tasks directly from the terminal using Node.js and file system storage.</p>
+                                <p><b>DevTrack</b> is a CLI-based task manager for developers, offering intuitive
+                                    commands to add, list, complete, and remove tasks directly from the terminal using
+                                    Node.js and file system storage.</p>
                             </div>
                             <div class="project__tags-container">
                                 <div class="project__tags">
@@ -2220,40 +2316,86 @@
                                 </div>
                             </div>
                             <div class="project__links">
-                                <a href="https://github.com/Sahilll94/devtrack-cli" class="project__link" target="_blank" aria-label="GitHub Repository">
+                                <a href="https://github.com/Sahilll94/devtrack-cli" class="project__link"
+                                    target="_blank" aria-label="GitHub Repository">
                                     <i class='bx bxl-github'></i>
                                     <span>Repository</span>
                                 </a>
-                                <a href="https://www.npmjs.com/package/devtrack-cli" class="project__link" target="_blank" aria-label="NPM Package">
+                                <a href="https://www.npmjs.com/package/devtrack-cli" class="project__link"
+                                    target="_blank" aria-label="NPM Package">
                                     <i class='bx bx-package'></i>
                                     <span>NPM Package</span>
                                 </a>
                             </div>
                         </div>
                     </div>
+
+
+
+                    <!-- Expense Tracker Project -->
+                    <div class="project__card" data-category="python">
+                        <div class="project__image-container">
+                            <img class="project__image" src="assets/img/ExpenseTracker.png"
+                                alt="Expense Tracker Project Preview" loading="lazy">
+                            <div class="project__overlay">
+                                <a href="https://github.com/Sahilll94/Expense-Tracker" target="_blank"
+                                    class="project__overlay-btn">
+                                    View Code <i class='bx bxl-github'></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project__content">
+                            <div class="project__header">
+                                <h3 class="project__title">Expense Tracker</h3>
+                                <div class="project__type">Desktop App</div>
+                            </div>
+                            <div class="project__description">
+                                <p><b>Expense Tracker</b> helps users manage and visualize spending with a
+                                    Python/Tkinter interface, generating pie charts with Matplotlib to represent expense
+                                    distribution by category.</p>
+                            </div>
+                            <div class="project__tags-container">
+                                <div class="project__tags">
+                                    <span class="project__tag">Python</span>
+                                    <span class="project__tag">Tkinter</span>
+                                    <span class="project__tag">Matplotlib</span>
+                                    <span class="project__tag">SQLite</span>
+                                </div>
+                            </div>
+                            <div class="project__links">
+                                <a href="https://github.com/Sahilll94/Expense-Tracker" class="project__link"
+                                    target="_blank" aria-label="GitHub Repository">
+                                    <i class='bx bxl-github'></i>
+                                    <span>Repository</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
-            
+
             <!-- Project filtering script -->
             <script>
-                document.addEventListener('DOMContentLoaded', function() {
+                document.addEventListener('DOMContentLoaded', function () {
                     // Filter functionality
                     const filterBtns = document.querySelectorAll('.filter-btn');
                     const projectCards = document.querySelectorAll('.project__card');
-                    
+
                     filterBtns.forEach(btn => {
-                        btn.addEventListener('click', function() {
+                        btn.addEventListener('click', function () {
                             // Remove active class from all buttons
                             filterBtns.forEach(btn => btn.classList.remove('active'));
                             // Add active class to clicked button
                             this.classList.add('active');
-                            
+
                             const filterValue = this.getAttribute('data-filter');
-                            
+
                             projectCards.forEach(card => {
                                 // Get the card's categories
                                 const cardCategories = card.getAttribute('data-category');
-                                
+
                                 // Show all cards if 'all' filter is selected
                                 if (filterValue === 'all') {
                                     card.style.display = 'flex';
@@ -2281,7 +2423,7 @@
                             });
                         });
                     });
-                    
+
                     // Trigger click on 'All' button to initialize
                     document.querySelector('.filter-btn[data-filter="all"]').click();
                 });
@@ -2299,7 +2441,7 @@
                 margin: 40px auto;
                 max-width: 1400px;
             }
-            
+
             /* Project Filter Styles */
             .project-filter {
                 display: flex;
@@ -2308,7 +2450,7 @@
                 gap: 10px;
                 margin: 25px 0;
             }
-            
+
             .filter-btn {
                 background-color: transparent;
                 border: 1px solid var(--first-color);
@@ -2319,18 +2461,18 @@
                 cursor: pointer;
                 transition: all 0.3s ease;
             }
-            
+
             .filter-btn:hover {
                 background-color: rgba(28, 131, 225, 0.1);
                 transform: translateY(-3px);
             }
-            
+
             .filter-btn.active {
                 background-color: var(--first-color);
                 color: #fff;
                 box-shadow: 0 4px 15px rgba(28, 131, 225, 0.3);
             }
-            
+
             /* Project Card Styles */
             .project__card {
                 background-color: #242526;
@@ -2347,7 +2489,7 @@
                 transform: translateY(0);
                 position: relative;
             }
-            
+
             .project__card:hover {
                 transform: translateY(-15px);
                 box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
@@ -2379,34 +2521,36 @@
                     transform: scale(1);
                     opacity: 0.5;
                 }
+
                 70% {
                     transform: scale(1.07);
                     opacity: 0;
                 }
+
                 100% {
                     transform: scale(1.1);
                     opacity: 0;
                 }
             }
-            
+
             /* Project Image Container */
             .project__image-container {
                 position: relative;
                 height: 200px;
                 overflow: hidden;
             }
-            
+
             .project__image {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
                 transition: transform 0.6s ease;
             }
-            
+
             .project__card:hover .project__image {
                 transform: scale(1.1);
             }
-            
+
             /* Project Overlay */
             .project__overlay {
                 position: absolute;
@@ -2421,11 +2565,11 @@
                 opacity: 0;
                 transition: opacity 0.3s ease;
             }
-            
+
             .project__image-container:hover .project__overlay {
                 opacity: 1;
             }
-            
+
             .project__overlay-btn {
                 background-color: var(--first-color);
                 color: white;
@@ -2442,7 +2586,7 @@
                 cursor: pointer;
                 box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             }
-            
+
             .project__overlay-btn:hover {
                 background-color: #0e62c7;
                 transform: scale(1.05);
@@ -2456,7 +2600,7 @@
             .project__overlay-btn:hover i {
                 transform: translateX(3px);
             }
-            
+
             /* Project Content */
             .project__content {
                 display: flex;
@@ -2484,14 +2628,14 @@
             .project__card:hover .project__content::before {
                 opacity: 1;
             }
-            
+
             .project__header {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 margin-bottom: 15px;
             }
-            
+
             .project__title {
                 font-size: 1.3rem;
                 color: #ffffff;
@@ -2517,7 +2661,7 @@
             .project__card:hover .project__title::after {
                 width: 100%;
             }
-            
+
             .project__type {
                 font-size: 12px;
                 background-color: rgba(28, 131, 225, 0.15);
@@ -2554,35 +2698,42 @@
             /* Add icons to project types */
             .project__type::before {
                 font-family: 'boxicons';
-                content: '\ea8b'; /* Default icon */
+                content: '\ea8b';
+                /* Default icon */
                 font-size: 14px;
                 line-height: 1;
             }
 
             .project__type.web-app::before {
-                content: '\ea01'; /* Web icon */
+                content: '\ea01';
+                /* Web icon */
             }
 
             .project__type.interactive-tool::before {
-                content: '\e994'; /* Interactive icon */
+                content: '\e994';
+                /* Interactive icon */
             }
 
             .project__type.full-stack-app::before {
-                content: '\eb4f'; /* Stack icon */
+                content: '\eb4f';
+                /* Stack icon */
             }
 
             .project__type.desktop-app::before {
-                content: '\e9c4'; /* Computer icon */
+                content: '\e9c4';
+                /* Computer icon */
             }
 
             .project__type.cli-tool::before {
-                content: '\e957'; /* Terminal icon */
+                content: '\e957';
+                /* Terminal icon */
             }
 
             .project__type.job-portal::before {
-                content: '\ebca'; /* Briefcase icon */
+                content: '\ebca';
+                /* Briefcase icon */
             }
-            
+
             .project__description {
                 color: #d1d1d1;
                 font-size: 0.9rem;
@@ -2591,15 +2742,15 @@
                 flex-grow: 1;
                 transition: color 0.3s ease;
             }
-            
+
             .project__card:hover .project__description {
                 color: #ffffff;
             }
-            
+
             .project__description p {
                 margin: 0;
             }
-            
+
             .project__description b {
                 color: var(--first-color);
                 font-weight: 600;
@@ -2611,24 +2762,24 @@
                 color: #56ccf2;
                 text-shadow: 0 0 8px rgba(86, 204, 242, 0.3);
             }
-            
+
             /* Project Tags */
             .project__tags-container {
                 margin-bottom: 15px;
                 transition: transform 0.3s ease;
             }
-            
+
             .project__card:hover .project__tags-container {
                 transform: translateY(-3px);
             }
-            
+
             .project__tags {
                 display: flex;
                 flex-wrap: wrap;
                 gap: 8px;
                 transition: gap 0.3s ease;
             }
-            
+
             .project__tag {
                 background-color: rgba(255, 255, 255, 0.1);
                 color: #e4e4e4;
@@ -2638,11 +2789,11 @@
                 font-weight: 500;
                 transition: all 0.3s ease;
             }
-            
+
             .project__card:hover .project__tags {
                 gap: 6px;
             }
-            
+
             .project__card:hover .project__tag {
                 background-color: rgba(255, 255, 255, 0.15);
                 transform: scale(1.05);
@@ -2656,7 +2807,7 @@
             .project__card:hover .project__tag:nth-child(even) {
                 transform: translateY(2px);
             }
-            
+
             /* Project Links */
             .project__links {
                 display: flex;
@@ -2666,11 +2817,11 @@
                 border-top: 1px solid rgba(255, 255, 255, 0.1);
                 transition: border-color 0.3s ease;
             }
-            
+
             .project__card:hover .project__links {
                 border-color: rgba(255, 255, 255, 0.2);
             }
-            
+
             .project__link {
                 color: #ffffff;
                 text-decoration: none;
@@ -2682,60 +2833,60 @@
                 padding: 5px 8px;
                 border-radius: 8px;
             }
-            
+
             .project__link i {
                 font-size: 1.2rem;
                 transition: transform 0.3s ease;
             }
-            
+
             .project__link:hover {
                 color: var(--first-color);
                 background-color: rgba(255, 255, 255, 0.05);
             }
-            
+
             .project__link:hover i {
                 transform: translateY(-3px);
             }
-            
+
             /* Responsive Design */
             @media screen and (max-width: 1200px) {
                 .project__card {
                     width: calc(50% - 20px);
                 }
             }
-            
+
             @media screen and (max-width: 768px) {
                 .projects__container {
                     gap: 25px;
                 }
-                
+
                 .project__card {
                     width: 100%;
                     max-width: 400px;
                 }
-                
+
                 .project-filter {
                     gap: 8px;
                     margin: 20px 0;
                 }
-                
+
                 .filter-btn {
                     padding: 6px 14px;
                     font-size: 12px;
                 }
-                
+
                 .project__image-container {
                     height: 180px;
                 }
-                
+
                 .project__content {
                     padding: 15px;
                 }
-                
+
                 .project__title {
                     font-size: 1.1rem;
                 }
-                
+
                 .project__description {
                     font-size: 0.85rem;
                 }
@@ -2744,11 +2895,11 @@
 
         <!-- Update project card script to add classes to project types -->
         <script>
-            document.addEventListener('DOMContentLoaded', function() {
+            document.addEventListener('DOMContentLoaded', function () {
                 // Add specific classes to project types for custom styling
                 document.querySelectorAll('.project__type').forEach(type => {
                     const text = type.textContent.trim().toLowerCase();
-                    
+
                     if (text === 'interactive tool') {
                         type.classList.add('interactive-tool');
                     } else if (text === 'web app') {
@@ -2763,11 +2914,11 @@
                         type.classList.add('job-portal');
                     }
                 });
-                
+
                 // Add subtle card hover interaction
                 const projectCards = document.querySelectorAll('.project__card');
                 projectCards.forEach(card => {
-                    card.addEventListener('mouseenter', function() {
+                    card.addEventListener('mouseenter', function () {
                         // Add subtle movement to other cards when one is hovered
                         projectCards.forEach(otherCard => {
                             if (otherCard !== card) {
@@ -2775,15 +2926,15 @@
                             }
                         });
                     });
-                    
-                    card.addEventListener('mouseleave', function() {
+
+                    card.addEventListener('mouseleave', function () {
                         // Restore all cards when hover is removed
                         projectCards.forEach(otherCard => {
                             otherCard.style.opacity = '1';
                         });
                     });
                 });
-                
+
                 // Filter functionality
                 // ...existing code...
             });
@@ -2797,7 +2948,7 @@
         <!-- CONTACT SECTION -->
         <section class="contact-section section" id="contact">
             <h2 class="section-title">Contact</h2>
-            
+
             <div class="contact-container">
                 <div class="contact-info">
                     <div class="contact-card">
@@ -2807,10 +2958,11 @@
                         <div class="contact-card-content">
                             <h3>Location</h3>
                             <p>SRM Institute of Science and Technology, Ramapuram Campus, Chennai</p>
-                            <a href="https://maps.app.goo.gl/YF3AkXGaYGiakHF69" target="_blank" class="contact-link">View on Map <i class='bx bx-right-arrow-alt'></i></a>
+                            <a href="https://maps.app.goo.gl/YF3AkXGaYGiakHF69" target="_blank"
+                                class="contact-link">View on Map <i class='bx bx-right-arrow-alt'></i></a>
                         </div>
                     </div>
-                    
+
                     <div class="contact-card">
                         <div class="contact-card-icon">
                             <i class='bx bx-envelope'></i>
@@ -2818,10 +2970,11 @@
                         <div class="contact-card-content">
                             <h3>Email</h3>
                             <p>contact@sahilfolio.live</p>
-                            <a href="mailto:contact@sahilfolio.live" class="contact-link">Send an Email <i class='bx bx-right-arrow-alt'></i></a>
+                            <a href="mailto:contact@sahilfolio.live" class="contact-link">Send an Email <i
+                                    class='bx bx-right-arrow-alt'></i></a>
                         </div>
                     </div>
-                    
+
                     <div class="contact-card">
                         <div class="contact-card-icon">
                             <i class='bx bx-phone'></i>
@@ -2829,14 +2982,16 @@
                         <div class="contact-card-content">
                             <h3>Phone</h3>
                             <p>+91 9427725180</p>
-                            <a href="tel:+919427725180" class="contact-link">Call Me <i class='bx bx-right-arrow-alt'></i></a>
+                            <a href="tel:+919427725180" class="contact-link">Call Me <i
+                                    class='bx bx-right-arrow-alt'></i></a>
                         </div>
                     </div>
-                    
+
                     <div class="contact-social">
                         <h3>Connect With Me</h3>
                         <div class="contact-social-icons">
-                            <a href="https://www.linkedin.com/in/sahilll94" target="_blank" aria-label="LinkedIn Profile">
+                            <a href="https://www.linkedin.com/in/sahilll94" target="_blank"
+                                aria-label="LinkedIn Profile">
                                 <i class='bx bxl-linkedin'></i>
                             </a>
                             <a href="https://github.com/Sahilll94" target="_blank" aria-label="GitHub Profile">
@@ -2845,21 +3000,23 @@
                             <a href="https://x.com/Sa_hilll94" target="_blank" aria-label="Twitter Profile">
                                 <i class='bx bxl-twitter'></i>
                             </a>
-                            <a href="https://www.instagram.com/sa_hilll94" target="_blank" aria-label="Instagram Profile">
+                            <a href="https://www.instagram.com/sa_hilll94" target="_blank"
+                                aria-label="Instagram Profile">
                                 <i class='bx bxl-instagram'></i>
                             </a>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="contact-form-container">
-                    <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                    <form id="contact-form" action="https://api.web3forms.com/submit" method="POST"
+                        class="contact-form">
                         <h3 class="form-title">Send Me a Message</h3>
                         <p class="form-subtitle">I'd love to hear from you! Fill out the form below.</p>
-                        
+
                         <!-- Hidden Access Key -->
                         <input type="hidden" name="access_key" value="ddea4dc1-d702-466f-9f78-11f4bd0d7019">
-                        
+
                         <div class="form-group">
                             <div class="input-container">
                                 <i class='bx bx-user input-icon'></i>
@@ -2869,7 +3026,7 @@
                             </div>
                             <span class="form-error"></span>
                         </div>
-                        
+
                         <div class="form-group">
                             <div class="input-container">
                                 <i class='bx bx-envelope input-icon'></i>
@@ -2879,7 +3036,7 @@
                             </div>
                             <span class="form-error"></span>
                         </div>
-                        
+
                         <div class="form-group">
                             <div class="input-container">
                                 <i class='bx bx-chat input-icon'></i>
@@ -2889,23 +3046,24 @@
                             </div>
                             <span class="form-error"></span>
                         </div>
-                        
+
                         <div class="form-group">
                             <div class="input-container textarea-container">
                                 <i class='bx bx-message-detail input-icon'></i>
-                                <textarea id="message" name="message" class="form-input form-textarea" required></textarea>
+                                <textarea id="message" name="message" class="form-input form-textarea"
+                                    required></textarea>
                                 <label for="message" class="form-label">Your Message</label>
                                 <div class="input-indicator"></div>
                             </div>
                             <span class="form-error"></span>
                         </div>
-                        
+
                         <!-- Dynamic Subject Line (Hidden) -->
                         <input type="hidden" id="dynamic-subject" name="subject" value="">
-                        
+
                         <!-- Redirect -->
                         <input type="hidden" name="redirect" value="https://sahilfolio.live/thankyou.html">
-                        
+
                         <div class="form-group button-group">
                             <button type="submit" class="submit-button">
                                 <span>Send Message</span>
@@ -2926,7 +3084,7 @@
                 border-radius: 16px;
                 margin: 0 20px;
             }
-            
+
             .contact-container {
                 display: flex;
                 flex-wrap: wrap;
@@ -2935,7 +3093,7 @@
                 margin: 0 auto;
                 padding: 20px;
             }
-            
+
             /* Contact Info Side */
             .contact-info {
                 flex: 1;
@@ -2944,7 +3102,7 @@
                 flex-direction: column;
                 gap: 25px;
             }
-            
+
             .contact-card {
                 background: linear-gradient(145deg, #242526, #2c2d2e);
                 border-radius: 12px;
@@ -2957,7 +3115,7 @@
                 position: relative;
                 overflow: hidden;
             }
-            
+
             .contact-card::before {
                 content: '';
                 position: absolute;
@@ -2968,16 +3126,16 @@
                 background: var(--first-color);
                 transition: width 0.3s ease;
             }
-            
+
             .contact-card:hover {
                 transform: translateY(-5px);
                 box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
             }
-            
+
             .contact-card:hover::before {
                 width: 8px;
             }
-            
+
             .contact-card-icon {
                 width: 50px;
                 height: 50px;
@@ -2990,30 +3148,30 @@
                 font-size: 1.5rem;
                 transition: all 0.3s ease;
             }
-            
+
             .contact-card:hover .contact-card-icon {
                 background-color: var(--first-color);
                 color: white;
                 transform: scale(1.1);
             }
-            
+
             .contact-card-content {
                 flex: 1;
             }
-            
+
             .contact-card-content h3 {
                 font-size: 1.2rem;
                 margin-bottom: 8px;
                 color: white;
             }
-            
+
             .contact-card-content p {
                 color: #b0b0b0;
                 font-size: 0.95rem;
                 line-height: 1.5;
                 margin-bottom: 12px;
             }
-            
+
             .contact-link {
                 color: var(--first-color);
                 text-decoration: none;
@@ -3023,19 +3181,19 @@
                 gap: 5px;
                 transition: all 0.3s ease;
             }
-            
+
             .contact-link i {
                 transition: transform 0.3s ease;
             }
-            
+
             .contact-link:hover {
                 color: white;
             }
-            
+
             .contact-link:hover i {
                 transform: translateX(4px);
             }
-            
+
             /* Social Media Links */
             .contact-social {
                 background: linear-gradient(145deg, #242526, #2c2d2e);
@@ -3044,25 +3202,25 @@
                 box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
                 transition: all 0.3s ease;
             }
-            
+
             .contact-social:hover {
                 transform: translateY(-5px);
                 box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
             }
-            
+
             .contact-social h3 {
                 font-size: 1.2rem;
                 margin-bottom: 15px;
                 color: white;
                 text-align: center;
             }
-            
+
             .contact-social-icons {
                 display: flex;
                 justify-content: center;
                 gap: 20px;
             }
-            
+
             .contact-social-icons a {
                 width: 45px;
                 height: 45px;
@@ -3075,18 +3233,18 @@
                 font-size: 1.2rem;
                 transition: all 0.3s ease;
             }
-            
+
             .contact-social-icons a:hover {
                 background-color: var(--first-color);
                 transform: translateY(-5px);
             }
-            
+
             /* Form Side */
             .contact-form-container {
                 flex: 1;
                 min-width: 300px;
             }
-            
+
             .contact-form {
                 background: linear-gradient(145deg, #242526, #2c2d2e);
                 padding: 35px;
@@ -3096,7 +3254,7 @@
                 position: relative;
                 overflow: hidden;
             }
-            
+
             .contact-form::before {
                 content: '';
                 position: absolute;
@@ -3106,34 +3264,34 @@
                 height: 4px;
                 background: linear-gradient(to right, var(--first-color), #56ccf2);
             }
-            
+
             .contact-form:hover {
                 transform: translateY(-5px);
                 box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
             }
-            
+
             .form-title {
                 font-size: 1.5rem;
                 color: white;
                 margin-bottom: 10px;
                 font-weight: 600;
             }
-            
+
             .form-subtitle {
                 color: #b0b0b0;
                 font-size: 0.95rem;
                 margin-bottom: 25px;
             }
-            
+
             .form-group {
                 margin-bottom: 25px;
                 position: relative;
             }
-            
+
             .input-container {
                 position: relative;
             }
-            
+
             .input-icon {
                 position: absolute;
                 left: 15px;
@@ -3144,12 +3302,12 @@
                 z-index: 1;
                 transition: all 0.3s ease;
             }
-            
+
             .textarea-container .input-icon {
                 top: 25px;
                 transform: none;
             }
-            
+
             .form-input {
                 width: 100%;
                 padding: 15px 15px 15px 50px;
@@ -3161,14 +3319,14 @@
                 transition: all 0.3s ease;
                 outline: none;
             }
-            
+
             .form-textarea {
                 min-height: 120px;
                 resize: vertical;
                 line-height: 1.5;
                 padding-top: 20px;
             }
-            
+
             .form-label {
                 position: absolute;
                 left: 50px;
@@ -3178,25 +3336,25 @@
                 pointer-events: none;
                 transition: all 0.3s ease;
             }
-            
+
             .form-input:focus,
             .form-input:not(:placeholder-shown) {
                 border-color: var(--first-color);
                 background-color: rgba(28, 131, 225, 0.05);
                 padding-left: 50px;
             }
-            
-            .form-input:focus + .form-label,
-            .form-input:not(:placeholder-shown) + .form-label {
+
+            .form-input:focus+.form-label,
+            .form-input:not(:placeholder-shown)+.form-label {
                 transform: translateY(-25px) translateX(-15px) scale(0.85);
                 color: var(--first-color);
                 font-weight: 500;
             }
-            
-            .form-input:focus ~ .input-icon {
+
+            .form-input:focus~.input-icon {
                 color: var(--first-color);
             }
-            
+
             .input-indicator {
                 position: absolute;
                 bottom: 0;
@@ -3206,37 +3364,37 @@
                 background-color: var(--first-color);
                 transition: width 0.3s ease;
             }
-            
-            .form-input:focus ~ .input-indicator {
+
+            .form-input:focus~.input-indicator {
                 width: 100%;
             }
-            
+
             .form-error {
                 color: #ff6b6b;
                 font-size: 0.85rem;
                 margin-top: 5px;
                 display: none;
             }
-            
+
             .form-input.error {
                 border-color: #ff6b6b;
             }
-            
-            .form-input.error ~ .input-indicator {
+
+            .form-input.error~.input-indicator {
                 background-color: #ff6b6b;
                 width: 100%;
             }
-            
-            .form-input.error ~ .form-error {
+
+            .form-input.error~.form-error {
                 display: block;
             }
-            
+
             .button-group {
                 display: flex;
                 justify-content: flex-end;
                 margin-top: 15px;
             }
-            
+
             .submit-button {
                 background-color: var(--first-color);
                 color: white;
@@ -3253,7 +3411,7 @@
                 position: relative;
                 overflow: hidden;
             }
-            
+
             .submit-button::before {
                 content: '';
                 position: absolute;
@@ -3264,70 +3422,71 @@
                 background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
                 transition: all 0.5s ease;
             }
-            
+
             .submit-button:hover {
                 background-color: #0e62c7;
                 transform: translateY(-3px);
                 box-shadow: 0 10px 20px rgba(14, 98, 199, 0.3);
             }
-            
+
             .submit-button:hover::before {
                 left: 100%;
             }
-            
+
             .submit-button i {
                 font-size: 1.2rem;
                 transition: transform 0.3s ease;
             }
-            
+
             .submit-button:hover i {
                 transform: translateX(3px);
             }
-            
+
             /* Responsive Design */
             @media screen and (max-width: 992px) {
                 .contact-container {
                     flex-direction: column;
                 }
-                
-                .contact-info, .contact-form-container {
+
+                .contact-info,
+                .contact-form-container {
                     width: 100%;
                 }
             }
-            
+
             @media screen and (max-width: 576px) {
                 .contact-section {
                     margin: 0 10px;
                 }
-                
+
                 .contact-container {
                     padding: 10px;
                 }
-                
+
                 .contact-card {
                     padding: 20px;
                 }
-                
+
                 .contact-form {
                     padding: 25px 20px;
                 }
-                
+
                 .form-title {
                     font-size: 1.3rem;
                 }
-                
+
                 .form-subtitle {
                     font-size: 0.9rem;
                 }
-                
+
                 .form-input {
                     padding: 12px 12px 12px 45px;
                 }
-                
+
                 .input-icon {
                     left: 12px;
                 }
-                
+
                 .form-label {
                     left: 45px;
                 }
@@ -3336,26 +3495,26 @@
 
         <!-- Form validation script -->
         <script>
-            document.addEventListener('DOMContentLoaded', function() {
+            document.addEventListener('DOMContentLoaded', function () {
                 const contactForm = document.getElementById('contact-form');
                 const nameInput = document.getElementById('name');
                 const emailInput = document.getElementById('email');
                 const subjectInput = document.getElementById('subject');
                 const messageInput = document.getElementById('message');
                 const dynamicSubject = document.getElementById('dynamic-subject');
-                
+
                 // Set placeholder for floating label animation
                 const inputs = document.querySelectorAll('.form-input');
                 inputs.forEach(input => {
                     input.setAttribute('placeholder', ' ');
                 });
-                
+
                 // Form validation
                 function validateEmail(email) {
                     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                     return re.test(String(email).toLowerCase());
                 }
-                
+
                 function showError(input, message) {
                     const formGroup = input.closest('.form-group');
                     const errorElement = formGroup.querySelector('.form-error');
@@ -3363,16 +3522,16 @@
                     errorElement.textContent = message;
                     return false;
                 }
-                
+
                 function clearError(input) {
                     const formGroup = input.closest('.form-group');
                     const errorElement = formGroup.querySelector('.form-error');
                     input.classList.remove('error');
                     errorElement.textContent = '';
                 }
-                
+
                 // Input validation events
-                nameInput.addEventListener('blur', function() {
+                nameInput.addEventListener('blur', function () {
                     if (this.value.trim() === '') {
                         showError(this, 'Name is required');
                     } else if (this.value.length < 2) {
@@ -3381,8 +3540,8 @@
                         clearError(this);
                     }
                 });
-                
-                emailInput.addEventListener('blur', function() {
+
+                emailInput.addEventListener('blur', function () {
                     if (this.value.trim() === '') {
                         showError(this, 'Email is required');
                     } else if (!validateEmail(this.value)) {
@@ -3391,16 +3550,16 @@
                         clearError(this);
                     }
                 });
-                
-                subjectInput.addEventListener('blur', function() {
+
+                subjectInput.addEventListener('blur', function () {
                     if (this.value.trim() === '') {
                         showError(this, 'Subject is required');
                     } else {
                         clearError(this);
                     }
                 });
-                
-                messageInput.addEventListener('blur', function() {
+
+                messageInput.addEventListener('blur', function () {
                     if (this.value.trim() === '') {
                         showError(this, 'Message is required');
                     } else if (this.value.length < 10) {
@@ -3409,9 +3568,9 @@
                         clearError(this);
                     }
                 });
-                
+
                 // Dynamic subject field update
-                nameInput.addEventListener('input', function() {
+                nameInput.addEventListener('input', function () {
                     const name = this.value.trim();
                     if (name) {
                         dynamicSubject.value = `${name} sent a message from SAHIL's PORTFOLIO , Subject: `;
@@ -3419,37 +3578,37 @@
                         dynamicSubject.value = '';
                     }
                 });
-                
+
                 // Form submission
-                contactForm.addEventListener('submit', function(e) {
+                contactForm.addEventListener('submit', function (e) {
                     let isValid = true;
-                    
+
                     // Validate name
                     if (nameInput.value.trim() === '') {
                         isValid = showError(nameInput, 'Name is required');
                     } else if (nameInput.value.length < 2) {
                         isValid = showError(nameInput, 'Name must be at least 2 characters');
                     }
-                    
+
                     // Validate email
                     if (emailInput.value.trim() === '') {
                         isValid = showError(emailInput, 'Email is required');
                     } else if (!validateEmail(emailInput.value)) {
                         isValid = showError(emailInput, 'Please enter a valid email address');
                     }
-                    
+
                     // Validate subject
                     if (subjectInput.value.trim() === '') {
                         isValid = showError(subjectInput, 'Subject is required');
                     }
-                    
+
                     // Validate message
                     if (messageInput.value.trim() === '') {
                         isValid = showError(messageInput, 'Message is required');
                     } else if (messageInput.value.length < 10) {
                         isValid = showError(messageInput, 'Message must be at least 10 characters');
                     }
-                    
+
                     if (!isValid) {
                         e.preventDefault();
                     }
@@ -3465,10 +3624,12 @@
         <footer class="enhanced-footer">
             <div class="footer-wave-container">
                 <svg class="footer-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120">
-                    <path fill="#1a1a1a" fill-opacity="1" d="M0,64L60,80C120,96,240,128,360,128C480,128,600,96,720,85.3C840,75,960,85,1080,85.3C1200,85,1320,75,1380,69.3L1440,64L1440,120L1380,120C1320,120,1200,120,1080,120C960,120,840,120,720,120C600,120,480,120,360,120C240,120,120,120,60,120L0,120Z"></path>
+                    <path fill="#1a1a1a" fill-opacity="1"
+                        d="M0,64L60,80C120,96,240,128,360,128C480,128,600,96,720,85.3C840,75,960,85,1080,85.3C1200,85,1320,75,1380,69.3L1440,64L1440,120L1380,120C1320,120,1200,120,1080,120C960,120,840,120,720,120C600,120,480,120,360,120C240,120,120,120,60,120L0,120Z">
+                    </path>
                 </svg>
             </div>
-            
+
             <div class="footer-content">
                 <div class="footer-section about">
                     <h2 class="footer-section-title">Sahil</h2>
@@ -3476,15 +3637,21 @@
                         Computer Science enthusiast with a passion for web development, DSA, and emerging technologies.
                     </p>
                     <div class="footer-social">
-                        <a href="https://www.linkedin.com/in/sahilll94" target="_blank" aria-label="LinkedIn Profile"><i class='bx bxl-linkedin'></i></a>
-                        <a href="https://github.com/Sahilll94" target="_blank" aria-label="GitHub Profile"><i class='bx bxl-github'></i></a>
-                        <a href="https://x.com/Sa_hilll94" target="_blank" aria-label="Twitter Profile"><i class='bx bxl-twitter'></i></a>
-                        <a href="https://www.instagram.com/sa_hilll94" target="_blank" aria-label="Instagram Profile"><i class='bx bxl-instagram'></i></a>
-                        <a href="https://medium.com/@sa_hilll94" target="_blank" aria-label="Medium Profile"><i class="fa-brands fa-medium"></i></a>
-                        <a href="https://open.spotify.com/user/5kzseqwzfoywp5lp91va0g3x6?si=lMR8yGmRRI-GXSTUpOkZ-g&nd=1" target="_blank" aria-label="Spotify Profile"><i class='bx bxl-spotify'></i></a>
+                        <a href="https://www.linkedin.com/in/sahilll94" target="_blank" aria-label="LinkedIn Profile"><i
+                                class='bx bxl-linkedin'></i></a>
+                        <a href="https://github.com/Sahilll94" target="_blank" aria-label="GitHub Profile"><i
+                                class='bx bxl-github'></i></a>
+                        <a href="https://x.com/Sa_hilll94" target="_blank" aria-label="Twitter Profile"><i
+                                class='bx bxl-twitter'></i></a>
+                        <a href="https://www.instagram.com/sa_hilll94" target="_blank" aria-label="Instagram Profile"><i
+                                class='bx bxl-instagram'></i></a>
+                        <a href="https://medium.com/@sa_hilll94" target="_blank" aria-label="Medium Profile"><i
+                                class="fa-brands fa-medium"></i></a>
+                        <a href="https://open.spotify.com/user/5kzseqwzfoywp5lp91va0g3x6?si=lMR8yGmRRI-GXSTUpOkZ-g&nd=1"
+                            target="_blank" aria-label="Spotify Profile"><i class='bx bxl-spotify'></i></a>
                     </div>
                 </div>
-                
+
                 <div class="footer-section quick-links">
                     <h2 class="footer-section-title">Quick Links</h2>
                     <ul class="footer-links">
@@ -3498,13 +3665,14 @@
                         <li><a href="#contact"><i class='bx bx-chevron-right'></i> Contact</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-section contact-info">
                     <h2 class="footer-section-title">Contact Info</h2>
                     <ul class="footer-contact-list">
                         <li>
                             <i class="fa-solid fa-location-dot"></i>
-                            <p>SRM Institute of Science and Technology, Ramapuram Campus, Bharathi Salai, Ramapuram, Chennai – 600 089</p>
+                            <p>SRM Institute of Science and Technology, Ramapuram Campus, Bharathi Salai, Ramapuram,
+                                Chennai – 600 089</p>
                         </li>
                         <li>
                             <i class="fa-solid fa-envelope"></i>
@@ -3517,7 +3685,7 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <div class="footer-logo">
                     <a href="#home" class="scroll-to-top">
@@ -3559,7 +3727,7 @@
                 margin-top: 6rem;
                 color: #f4f4f4;
             }
-            
+
             .footer-wave-container {
                 position: absolute;
                 top: -120px;
@@ -3568,13 +3736,13 @@
                 overflow: hidden;
                 line-height: 0;
             }
-            
+
             .footer-wave {
                 width: 100%;
                 height: 120px;
                 transition: all 0.5s ease;
             }
-            
+
             /* Footer Content */
             .footer-content {
                 display: flex;
@@ -3585,12 +3753,12 @@
                 margin: 0 auto;
                 gap: 2rem;
             }
-            
+
             .footer-section {
                 flex: 1;
                 min-width: 250px;
             }
-            
+
             .footer-section-title {
                 color: var(--first-color);
                 font-size: 1.5rem;
@@ -3599,7 +3767,7 @@
                 position: relative;
                 padding-bottom: 0.5rem;
             }
-            
+
             .footer-section-title::after {
                 content: '';
                 position: absolute;
@@ -3609,7 +3777,7 @@
                 height: 3px;
                 background: linear-gradient(to right, var(--first-color), transparent);
             }
-            
+
             /* About Section */
             .footer-description {
                 color: #b0b0b0;
@@ -3617,13 +3785,13 @@
                 margin-bottom: 1.5rem;
                 font-size: 0.95rem;
             }
-            
+
             .footer-social {
                 display: flex;
                 gap: 1rem;
                 margin-top: 1.5rem;
             }
-            
+
             .footer-social a {
                 display: flex;
                 align-items: center;
@@ -3636,13 +3804,13 @@
                 font-size: 1.2rem;
                 transition: all 0.3s ease;
             }
-            
+
             .footer-social a:hover {
                 background-color: var(--first-color);
                 transform: translateY(-5px);
                 box-shadow: 0 5px 15px rgba(28, 131, 225, 0.3);
             }
-            
+
             /* Quick Links Section */
             .footer-links {
                 list-style: none;
@@ -3650,12 +3818,12 @@
                 columns: 2;
                 column-gap: 2rem;
             }
-            
+
             .footer-links li {
                 margin-bottom: 0.8rem;
                 break-inside: avoid;
             }
-            
+
             .footer-links a {
                 color: #b0b0b0;
                 text-decoration: none;
@@ -3664,35 +3832,35 @@
                 transition: all 0.3s ease;
                 font-size: 0.95rem;
             }
-            
+
             .footer-links a i {
                 margin-right: 0.5rem;
                 font-size: 1rem;
                 color: var(--first-color);
                 transition: transform 0.3s ease;
             }
-            
+
             .footer-links a:hover {
                 color: #fff;
                 transform: translateX(5px);
             }
-            
+
             .footer-links a:hover i {
                 transform: translateX(3px);
             }
-            
+
             /* Contact Info Section */
             .footer-contact-list {
                 list-style: none;
                 padding: 0;
             }
-            
+
             .footer-contact-list li {
                 display: flex;
                 margin-bottom: 1.5rem;
                 align-items: flex-start;
             }
-            
+
             .footer-contact-list li i {
                 margin-right: 1rem;
                 font-size: 1.2rem;
@@ -3700,24 +3868,24 @@
                 min-width: 20px;
                 margin-top: 0.3rem;
             }
-            
+
             .footer-contact-list li p {
                 color: #b0b0b0;
                 margin: 0;
                 font-size: 0.95rem;
                 line-height: 1.6;
             }
-            
+
             .footer-contact-list li p a {
                 color: #b0b0b0;
                 text-decoration: none;
                 transition: color 0.3s ease;
             }
-            
+
             .footer-contact-list li p a:hover {
                 color: var(--first-color);
             }
-            
+
             /* Footer Bottom */
             .footer-bottom {
                 background-color: rgba(0, 0, 0, 0.2);
@@ -3729,11 +3897,11 @@
                 gap: 1rem;
                 text-align: center;
             }
-            
+
             .footer-logo {
                 position: relative;
             }
-            
+
             .scroll-to-top {
                 display: flex;
                 align-items: center;
@@ -3749,45 +3917,45 @@
                 transition: all 0.3s ease;
                 box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             }
-            
+
             .scroll-to-top:hover {
                 background-color: #0e62c7;
                 transform: translateY(-5px);
                 box-shadow: 0 8px 20px rgba(28, 131, 225, 0.4);
             }
-            
+
             .logo-text {
                 font-size: 1.5rem;
                 font-weight: bold;
             }
-            
+
             .copyright p {
                 color: #b0b0b0;
                 font-size: 0.9rem;
                 margin: 0;
             }
-            
+
             .footer-bottom-links {
                 display: flex;
                 align-items: center;
                 gap: 0.8rem;
             }
-            
+
             .footer-bottom-links a {
                 color: #b0b0b0;
                 text-decoration: none;
                 font-size: 0.9rem;
                 transition: color 0.3s ease;
             }
-            
+
             .footer-bottom-links a:hover {
                 color: var(--first-color);
             }
-            
+
             .separator {
                 color: #555;
             }
-            
+
             /* Mobile Footer Navigation */
             .mobile-footer-nav {
                 display: none;
@@ -3800,7 +3968,7 @@
                 z-index: 999;
                 padding: 10px 0;
             }
-            
+
             .mobile-footer-links {
                 display: flex;
                 justify-content: space-around;
@@ -3808,58 +3976,58 @@
                 gap: 10px;
                 flex-wrap: wrap;
             }
-            
+
             .mobile-footer-links a {
                 color: #b0b0b0;
                 text-decoration: none;
                 font-size: 0.9rem;
                 transition: color 0.3s ease;
             }
-            
+
             .mobile-footer-links a:hover {
                 color: var(--first-color);
             }
-            
+
             /* Responsive Design */
             @media screen and (max-width: 992px) {
                 .footer-content {
                     gap: 3rem;
                 }
-                
+
                 .footer-section {
                     min-width: 200px;
                 }
             }
-            
+
             @media screen and (max-width: 768px) {
                 .footer-content {
                     flex-direction: column;
                     gap: 2.5rem;
                 }
-                
+
                 .footer-section {
                     width: 100%;
                 }
-                
+
                 .footer-bottom {
                     flex-direction: column;
                     gap: 1rem;
                 }
-                
+
                 .footer-bottom-links {
                     justify-content: center;
                 }
-                
+
                 .mobile-footer-nav {
                     display: block;
                 }
             }
-            
+
             @media screen and (max-width: 576px) {
                 .footer-links {
                     columns: 1;
                 }
-                
+
                 .footer-content {
                     padding: 3rem 5% 2rem;
                 }
@@ -3867,16 +4035,16 @@
         </style>
 
         <script>
-            document.addEventListener('DOMContentLoaded', function() {
+            document.addEventListener('DOMContentLoaded', function () {
                 // Smooth scroll for footer links
                 document.querySelectorAll('.footer-links a, .scroll-to-top').forEach(link => {
-                    link.addEventListener('click', function(e) {
+                    link.addEventListener('click', function (e) {
                         if (this.getAttribute('href').startsWith('#')) {
                             e.preventDefault();
-                            
+
                             const targetId = this.getAttribute('href');
                             const targetElement = document.querySelector(targetId);
-                            
+
                             if (targetElement) {
                                 window.scrollTo({
                                     top: targetElement.offsetTop - 100,
@@ -3886,13 +4054,13 @@
                         }
                     });
                 });
-                
+
                 // Scroll to top button interaction
-                window.addEventListener('scroll', function() {
+                window.addEventListener('scroll', function () {
                     const scrollToTopBtn = document.querySelector('.scroll-to-top');
                     if (window.scrollY > 500) {
                         scrollToTopBtn.style.opacity = '1';
-                    } else {    
+                    } else {
                         scrollToTopBtn.style.opacity = '0.7';
                     }
                 });
